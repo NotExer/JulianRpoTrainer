@@ -1,0 +1,108 @@
+---
+import CoachingCard from './CoachingCard.astro';
+import ContactBar from '../components/ContactBar.astro';
+---
+
+<section class="consultations-section">
+  <!-- Grid de 2 tarjetas -->
+  <div class="cards-grid">
+    <CoachingCard 
+      title="MI PROPOPOSITO"
+      subtitle="CONOCE MIS METODOS DE COACHING"
+      backgroundColor="#222"
+    />
+    
+    <CoachingCard 
+      title="TESTOMONIOS"
+      subtitle="CONOCE LAS OPINIONES DE MIS CLIENTES"
+      backgroundColor="#333"
+    />
+  </div>
+
+  <!-- Grid de texto y video -->
+  <div class="content-grid">
+    <div class="text-content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quisquam pariatur, at fugiat expedita quod? Pariatur iusto esse asperiores dolorem est, illo dolore nesciunt maiores voluptate sit nihil et dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias deleniti magnam ea nisi laborum, corporis ab ad dolore, neque accusamus tempora perferendis error exercitationem vel dicta nihil, quidem nulla quam.
+      </p>
+    </div>
+
+    <div class="video-content">
+      <div class="play-button">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="40" fill="rgba(255,255,255,0.9)"/>
+          <path d="M32 25L55 40L32 55V25Z" fill="#000"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <ContactBar />
+</section>
+
+<style>
+  .consultations-section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background: #111;
+    z-index: 100;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+
+  }
+
+  .text-content {
+    background-color: #111;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .text-content p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .video-content {
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .play-button {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .play-button:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .cards-grid,
+    .content-grid {
+      grid-template-columns: 1fr; 
+    }
+
+    .consultations-section{
+      margin-bottom: 770px;
+    }
+  }
+</style>

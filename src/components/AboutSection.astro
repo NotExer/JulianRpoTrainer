@@ -1,0 +1,216 @@
+---
+// components/AboutSection.astro
+import ContactBar from '../components/ContactBar.astro';
+---
+
+<section class="about-section">
+  <!-- Grid superior de 3 tarjetas con imágenes -->
+  <div class="info-cards-grid">
+    <div class="info-card">
+      <div class="card-image" >
+        <div class="card-overlay">
+          <h3>JULIAN RESTREPO </h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro ipsa modi eos harum eum delectus, iste temporibus dolores mollitia impedit hic totam consequatur error, eius atque natus, non autem? Rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ab rem sunt, nulla ipsam, rerum tempora, sequi magni eligendi inventore earum iure autem beatae enim ex quod excepturi ea natus.</p>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="info-card">
+      <div class="card-image">
+        <div class="card-overlay">
+          <h3>ENTOCATE EN TUS OBJETIVOS</h3>   
+        </div>
+      </div>
+    </div>
+  </div>
+  <ContactBar />
+
+</section>
+
+<style>
+  .about-section {
+    position: relative;
+    width: 100%;
+    background: #000;
+    z-index: 100;
+
+  }
+
+  /* Grid superior de tarjetas */
+  .info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .info-card {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: ;
+  }
+
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+  }
+
+  .card-overlay h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .card-overlay p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .download-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .download-btn:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  /* Grid de contenido (texto + video) */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .text-content {
+    background-color: #000;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .text-content p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .video-content {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+  }
+
+  .video-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-button {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .play-button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Grid inferior de logros */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+
+  .achievement-item {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .achievement-item:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .info-cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .info-cards-grid,
+    .content-grid,
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-card {
+      height: 300px;
+    }
+
+    .text-content {
+      padding: 40px 20px;
+    }
+
+    .about-section {
+      margin-bottom: 770px;
+    }
+
+    .achievements-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievement-item {
+      height: 200px;
+    }
+  }
+</style>

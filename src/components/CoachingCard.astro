@@ -1,0 +1,66 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  buttonText?: string;
+  backgroundColor: string;
+}
+
+const { title, subtitle, buttonText = "VER MAS", backgroundColor } = Astro.props;
+---
+
+<div class="coaching-card" style={`background-color: ${backgroundColor}`}>
+  <div class="card-content">
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
+    <button class="download-btn">{buttonText}</button>
+  </div>
+</div>
+
+<style>
+  .coaching-card {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+  }
+
+  .card-content h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .card-content p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .download-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .download-btn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+</style>

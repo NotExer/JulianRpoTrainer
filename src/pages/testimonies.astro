@@ -3,8 +3,9 @@ import Navbar from '../components/navbar.astro';
 import BackgroundImage from '../components/banner.astro'; 
 import Footer from '../components/Footer.astro';
 const fondoPrincipal = `url('/images/background.png')`;
-import ConsultationsSection from '../components/ConsultationsSection.astro';
 import SmoothScroll from '../components/SmoothScroll.astro';
+import TestimoniesSection from '../components/TestimoniesSection.astro';
+
 ---
 
 <html lang="es">
@@ -13,14 +14,14 @@ import SmoothScroll from '../components/SmoothScroll.astro';
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>JulianRpoTrainer</title>
+        <title>Astro</title>
     </head>
-<body style="margin:0; background:#111;">
+<body style="margin:0; background-color: #000;" >
     <Navbar />
     
    <BackgroundImage 
   imageUrl={fondoPrincipal} 
-  title="EL CAMBIO NO SE ESPERA SE ENTRENA">
+  title="CONOCE EL VERDADERO CAMBIO">
 </BackgroundImage>
 
     <!-- Spacer que se ajusta dinámicamente -->
@@ -28,14 +29,14 @@ import SmoothScroll from '../components/SmoothScroll.astro';
 
     <!-- Wrapper del contenido que aparecerá sobre el banner -->
     <div class="content-wrapper">
-        <ConsultationsSection />
-    </div>
+        <TestimoniesSection />
+      </div>
     
     <!-- Spacer para el footer -->
     <div class="footer-spacer"></div>
     
     <Footer />
-    <SmoothScroll />
+    <SmoothScroll />  
 </body>
 </html>
 
@@ -56,4 +57,3 @@ import SmoothScroll from '../components/SmoothScroll.astro';
     z-index: 99;
   }
 </style>
-
