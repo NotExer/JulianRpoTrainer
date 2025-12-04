@@ -4,12 +4,13 @@ interface Props {
   subtitle: string;
   buttonText?: string;
   backgroundColor: string;
+  imagePath?: string;
 }
 
-const { title, subtitle, buttonText = "VER MAS", backgroundColor } = Astro.props;
+const { title, subtitle, buttonText = "VER MAS", backgroundColor, imagePath } = Astro.props;
 ---
 
-<div class="coaching-card" style={`background-color: ${backgroundColor}`}>
+<div class="coaching-card" style={`background-color: ${backgroundColor}; ${imagePath ? `background-image: url('${imagePath}');` : ''}`}>
   <div class="card-content">
     <h2>{title}</h2>
     <p>{subtitle}</p>
@@ -24,6 +25,8 @@ const { title, subtitle, buttonText = "VER MAS", backgroundColor } = Astro.props
     display: flex;
     align-items: flex-end;
     padding: 40px;
+    background-size: cover;
+
   }
 
   .card-content h2 {
@@ -62,5 +65,13 @@ const { title, subtitle, buttonText = "VER MAS", backgroundColor } = Astro.props
   .download-btn:hover {
     background-color: #fff;
     color: #000;
+  }
+
+    @media (max-width: 768px) {
+    .coaching-card {
+      background-position: 90% 10%;
+      background-size: cover;
+
+    }
   }
 </style>

@@ -1,0 +1,259 @@
+---
+
+---
+
+<section class="contact-form-section">
+    <div class="container">
+        <div class="form-wrapper">
+            <h2>CONTÁCTAME</h2>
+            <p>ESTOY AQUÍ PARA AYUDARTE A LOGRAR TUS METAS</p>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">NOMBRE COMPLETO</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="Tu nombre"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">CORREO ELECTRÓNICO</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="tucorreo@ejemplo.com"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">TELÉFONO (OPCIONAL)</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+57 300 123 4567"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">MENSAJE</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        placeholder="Cuéntame sobre tus objetivos..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">ENVIAR MENSAJE</button>
+
+                <div id="formStatus" class="form-status"></div>
+<script>
+    const form = document.getElementById("contactForm");
+    const statusDiv = document.getElementById("formStatus");
+
+    if (form && statusDiv) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector(
+                ".submit-btn",
+            ) as HTMLButtonElement;
+            const originalBtnText = submitBtn.innerText;
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "ENVIANDO...";
+            statusDiv.className = "form-status";
+            statusDiv.style.display = "none";
+
+            const formData = new FormData(form as HTMLFormElement);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("/send-mail.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const text = await response.text();
+                let result;
+
+                try {
+                    result = JSON.parse(text);
+                } catch (e) {
+                    // Si falla el parseo y vemos código PHP, es porque estamos en dev
+                    if (text.includes("<?php")) {
+                        throw new Error(
+                            "Estás en modo desarrollo (npm run dev). Astro no ejecuta PHP. Debes probar esto en un servidor PHP o desplegar el proyecto.",
+                        );
+                    }
+                    throw new Error("Respuesta inválida del servidor.");
+                }
+
+                if (response.ok) {
+                    statusDiv.innerText =
+                        result.message || "Mensaje enviado con éxito.";
+                    statusDiv.classList.add("success");
+                    (form as HTMLFormElement).reset();
+                } else {
+                    throw new Error(
+                        result.message || "Error al enviar el mensaje.",
+                    );
+                }
+            } catch (error) {
+                statusDiv.innerText =
+                    error instanceof Error
+                        ? error.message
+                        : "Ocurrió un error inesperado.";
+                statusDiv.classList.add("error");
+            } finally {
+                statusDiv.style.display = "block";
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        });
+    }
+</script>
+
+<style>
+    .contact-form-section {
+        padding: 80px 20px;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .form-wrapper {
+        background: #111;
+        padding: 40px;
+        border: 1px solid #333;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        letter-spacing: 2px;
+    }
+
+    p {
+        text-align: center;
+        color: #888;
+        margin-bottom: 40px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #ccc;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        background: #000;
+        border: 1px solid #333;
+        color: #fff;
+        font-family: inherit;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box; /* Ensure padding doesn't affect width */
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #fff;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 18px;
+        background: #fff;
+        color: #000;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+        background: #ccc;
+        transform: translateY(-2px);
+    }
+
+    .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    .form-status {
+        margin-top: 20px;
+        padding: 15px;
+        text-align: center;
+        display: none;
+        font-size: 14px;
+    }
+
+    .form-status.success {
+        background: rgba(0, 255, 0, 0.1);
+        border: 1px solid #00ff00;
+        color: #00ff00;
+    }
+
+    .form-status.error {
+        background: rgba(255, 0, 0, 0.1);
+        border: 1px solid #ff0000;
+        color: #ff0000;
+    }
+
+    @media (max-width: 768px) {
+        .contact-form-section {
+            padding: 40px 20px;
+        }
+
+        .form-wrapper {
+            padding: 25px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+</style>

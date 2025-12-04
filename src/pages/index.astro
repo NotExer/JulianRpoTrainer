@@ -1,42 +1,43 @@
 ---
-import Navbar from '../components/navbar.astro';
-import BackgroundImage from '../components/banner.astro'; 
-import Footer from '../components/Footer.astro';
-const fondoPrincipal = `url('/images/2.webp')`;
-import ConsultationsSection from '../components/ConsultationsSection.astro';
-import SmoothScroll from '../components/SmoothScroll.astro';
+import Navbar from "../components/navbar.astro";
+import BackgroundImage from "../components/banner.astro";
+import Footer from "../components/Footer.astro";
+const fondoPrincipal = `url('/images/4.webp')`;
+import ContactBar from "../components/ContactBar.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
+import MotivationSection from "../components/MotivationSection.astro";
+import IntroSection from "../components/IntroSection.astro";
 ---
 
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>JulianRpoTrainer</title>
-    </head>
-<body style="margin:0; background:#111;">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/images/logito.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>JulianRpoTrainer</title>
+  </head>
+  <body style="margin:0; background:#111;">
     <Navbar />
-    
-   <BackgroundImage 
-  imageUrl={fondoPrincipal} 
-  title="EL CAMBIO NO SE ESPERA SE ENTRENA">
-</BackgroundImage>
+
+    <BackgroundImage
+      imageUrl={fondoPrincipal}
+      title="EL CAMBIO NO SE ESPERA SE ENTRENA"
+    />
 
     <!-- Spacer que se ajusta dinámicamente -->
     <div class="scroll-spacer" id="scrollSpacer"></div>
 
     <!-- Wrapper del contenido que aparecerá sobre el banner -->
     <div class="content-wrapper">
-        <ConsultationsSection />
+      <IntroSection />
+      <MotivationSection />
+      <ContactBar />
     </div>
-    
-    <!-- Spacer para el footer -->
-    <div class="footer-spacer"></div>
-    
+
     <Footer />
     <SmoothScroll />
-</body>
+  </body>
 </html>
 
 <style>
@@ -48,12 +49,6 @@ import SmoothScroll from '../components/SmoothScroll.astro';
   .content-wrapper {
     position: relative;
     z-index: 100;
-    background: #000;
-  }
-
-  .footer-spacer {
-    position: relative;
-    z-index: 99;
+    width: 100%;
   }
 </style>
-

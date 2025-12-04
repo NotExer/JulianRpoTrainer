@@ -1,0 +1,51 @@
+---
+import Navbar from "../components/navbar.astro";
+import BackgroundImage from "../components/banner.astro";
+import Footer from "../components/Footer.astro";
+const fondoPrincipal = `url('/images/2.webp')`;
+import ConsultationsSection from "../components/ConsultationsSection.astro";
+import ContactForm from "../components/ContactForm.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/images/logito.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>JulianRpoTrainer</title>
+  </head>
+  <body style="margin:0; background:#111;">
+    <Navbar />
+
+    <BackgroundImage
+      imageUrl={fondoPrincipal}
+      title="LISTO PARA EMPEZAR CON EL CAMBIO? "
+    />
+
+    <!-- Spacer que se ajusta dinámicamente -->
+    <div class="scroll-spacer" id="scrollSpacer"></div>
+
+    <!-- Wrapper del contenido que aparecerá sobre el banner -->
+    <div class="content-wrapper">
+      <ContactForm />
+    </div>
+
+    <Footer isFixed={false} />
+    <SmoothScroll />
+  </body>
+</html>
+
+<style>
+  .scroll-spacer {
+    height: 900px; /* Altura inicial que coincide con min-height del banner */
+    pointer-events: none;
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 100;
+    background: #000;
+  }
+</style>

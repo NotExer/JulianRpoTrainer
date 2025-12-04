@@ -1,0 +1,247 @@
+---
+// components/PurposeSection.astro
+---
+
+<section class="purpose-section">
+    <div class="purpose-grid">
+        <!-- Tarjeta principal con imagen de fondo -->
+        <div class="purpose-card main-card">
+            <div class="card-image" style="background-image: url('/images/purpose-bg.webp')">
+                <div class="card-overlay">
+                    <h2 class="section-title">MI PROPÓSITO</h2>
+                    <p class="highlight-text">
+                        Mi propósito es acompañarte a reconectar con tu cuerpo y con
+                        tu disciplina.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de contenido de texto -->
+        <div class="purpose-card text-card">
+            <div class="text-content">
+                <p>
+                    Porque sé que el cambio no viene de un día perfecto, sino de
+                    la constancia cuando nadie te ve.
+                </p>
+                <p>
+                    Entrenar no es solo mover pesas o contar calorías; es
+                    construir una identidad nueva: una que cumple lo que promete
+                    y no se rinde cuando la motivación baja.
+                </p>
+                <p>
+                    Mi trabajo es darte estructura, dirección y una guía que te
+                    enseñe a avanzar con criterio, sin caos, sin adivinanzas.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tarjeta de énfasis -->
+        <div class="purpose-card emphasis-card">
+            <div class="emphasis-content">
+                <p class="emphasis-text">
+                    No vendo atajos, vendo claridad. Y con claridad, todo
+                    cambia.
+                </p>
+                <p class="final-text">
+                    Si decides trabajar conmigo, no solo vas a entrenar… vas a
+                    evolucionar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .purpose-section {
+        position: relative;
+        width: 100%;
+        background: #000;
+        padding: 0;
+    }
+
+    .purpose-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    .purpose-card {
+        position: relative;
+        min-height: 400px;
+        overflow: hidden;
+    }
+
+    /* Tarjeta principal con imagen */
+    .main-card .card-image {
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-color: #111;
+    }
+
+    .main-card .card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 50px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6));
+        color: #fff;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #d3c588;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .highlight-text {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Tarjeta de texto */
+    .text-card {
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        grid-row: span 1;
+    }
+
+    .text-content {
+        padding: 50px;
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .text-content p {
+        color: #e0e0e0;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        font-weight: 300;
+    }
+
+    .text-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Tarjeta de énfasis */
+    .emphasis-card {
+        background: linear-gradient(135deg, #111 0%, #000 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+        border-top: 1px solid rgba(211, 197, 136, 0.2);
+    }
+
+    .emphasis-content {
+        padding: 60px;
+        text-align: center;
+        max-width: 900px;
+    }
+
+    .emphasis-text {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        position: relative;
+        display: inline-block;
+        padding: 0 30px;
+    }
+
+    .emphasis-text::before,
+    .emphasis-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: #d3c588;
+    }
+
+    .emphasis-text::before {
+        left: 0;
+    }
+
+    .emphasis-text::after {
+        right: 0;
+    }
+
+    .final-text {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #d3c588;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .purpose-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .emphasis-card {
+            grid-column: span 1;
+        }
+
+        .main-card .card-image {
+            min-height: 350px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .main-card .card-overlay {
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .highlight-text {
+            font-size: 1.1rem;
+        }
+
+        .text-content {
+            padding: 40px 20px;
+        }
+
+        .text-content p {
+            font-size: 15px;
+        }
+
+        .emphasis-content {
+            padding: 40px 20px;
+        }
+
+        .emphasis-text {
+            font-size: 1.1rem;
+            padding: 0 20px;
+        }
+
+        .final-text {
+            font-size: 1.2rem;
+        }
+
+        .purpose-card {
+            min-height: 300px;
+        }
+    }
+</style>

@@ -1,0 +1,122 @@
+---
+// components/MethodologyHero.astro
+---
+
+<section class="methodology-hero">
+    <div class="content-grid">
+        <!-- Imagen a la izquierda -->
+        <div class="hero-image">
+            <img
+                src="/images/1.webp"
+                alt="Julián Restrepo - Método De Cero a Fitness"
+            />
+        </div>
+
+        <!-- Contenido a la derecha -->
+        <div class="text-content">
+            <h1 class="hero-title">MÉTODO "DE CERO A FITNESS"®</h1>
+            <p class="hero-author">por Julián Restrepo</p>
+            <p class="hero-description">
+                El método De Cero a Fitness® está diseñado para personas que
+                hoy no se sienten "fitness": tal vez nunca han entrenado en
+                serio, no tienen hábitos claros, comen "más o menos bien" y se
+                sienten perdidas entre tanta información. Mi trabajo es tomar
+                ese punto de partida y convertirlo en un cuerpo más fuerte,
+                saludable y estético, acompañado de hábitos que realmente puedas
+                sostener en el tiempo.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .methodology-hero {
+        position: relative;
+        width: 100%;
+        background: #000;
+        z-index: 100;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        min-height: 400px;
+    }
+
+    /* Imagen */
+    .hero-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #111;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* Contenido */
+    .text-content {
+        background-color: #000;
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #d3c588;
+        margin: 0;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    .hero-author {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #fff;
+        margin: 0;
+        font-style: italic;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        font-weight: 300;
+        color: #e0e0e0;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-image {
+            height: 300px;
+        }
+
+        .text-content {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+    }
+</style>

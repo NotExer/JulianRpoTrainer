@@ -1,277 +1,380 @@
 ---
-import ContactBar from '../components/ContactBar.astro';
+const imageTestimonials = [
+  {
+    id: 1,
+    image: "/images/Testimonio1.jpeg",
+    comment: "Increíble cambio físico y mental. El proceso fue muy llevadero.",
+  },
+  {
+    id: 2,
+    image: "/images/Testimonio2.jpeg",
+    comment: "Gracias a Julián logré mis objetivos en tiempo récord.",
+  },
+  {
+    id: 3,
+    image: "/images/Testimonio3.jpeg",
+    comment: "La mejor decisión que he tomado para mi salud.",
+  },
+  {
+    id: 4,
+    image: "/images/Testimonio4.jpeg",
+    comment: "Entrenamientos personalizados que realmente funcionan.",
+  },
+  {
+    id: 5,
+    image: "/images/Testimonio5.jpeg",
+    comment: "Aprendí a comer mejor y a entrenar con técnica.",
+  },
+  {
+    id: 6,
+    image: "/images/Testimonio6.jpeg",
+    comment: "Resultados visibles desde el primer mes.",
+  },
+  {
+    id: 7,
+    image: "/images/Testimonio7.jpeg",
+    comment: "Un profesional excelente, siempre atento a mis dudas.",
+  },
+  {
+    id: 8,
+    image: "/images/Testimonio8.jpeg",
+    comment: "Superó mis expectativas totalmente.",
+  },
+  {
+    id: 9,
+    image: "/images/Testimonio9.jpeg",
+    comment: "Me siento más fuerte y con más energía que nunca.",
+  },
+];
+
+const videoTestimonials = [
+  {
+    id: "NT-smXM8DCc",
+    comment: "Mi experiencia entrenando online con Julián.",
+  },
+  { id: "T1GPhrIR6-0", comment: "Cómo cambié mis hábitos y mi vida." },
+  { id: "h1eCB9sSVek", comment: "Lo que más me gusta del plan personalizado." },
+  { id: "s2tSaSlsyRA", comment: "Resultados reales sin dietas extremas." },
+  { id: "HpXh9zevcy0", comment: "Superando mis límites cada día." },
+];
 ---
 
 <section class="empower-section">
-  <!-- Primera parte: Texto con fondo blanco -->
+  <!-- Intro -->
   <div class="empower-intro">
     <div class="logo">
       <img src="/images/logito.webp" alt="Empower" />
     </div>
-    <h2>ESTE PROGRAMA ESTÁ ABIERTO A HOMBRES Y MUJERES<br>DE TODAS LAS EDADES Y ORÍGENES. ESTUDIANTES, COMPLETOS<br>PADRES CON POCO TIEMPO, PROFESIONALES OCUPADOS...</h2>
+    <h2>
+      ESTE PROGRAMA ESTÁ ABIERTO A HOMBRES Y MUJERES<br />DE TODAS LAS EDADES Y
+      ORÍGENES.
+    </h2>
     <p class="highlight-text">
-      ENTIENDO LO DIFÍCIL QUE PUEDE SER DAR LOS PRIMEROS PASOS HACIA TUS OBJETIVOS
+      RESULTADOS REALES, PERSONAS REALES. TU CAMBIO COMIENZA AQUÍ.
     </p>
-    <button class="video-btn">VER VIDEO DE INDUCCION</button>
+    <a href="/plans" class="btn-buy">EMPEZAR AHORA</a>
   </div>
 
-  <!-- Segunda parte: Grid con imagen y texto -->
-  <div class="empower-content">
-
-
-
+  <!-- Image Testimonials -->
+  <div class="testimonials-container">
+    <h3 class="section-title">TRANSFORMACIONES</h3>
+    <div class="transformations-grid">
+      {
+        imageTestimonials.map((item) => (
+          <div class="testimonial-card">
+            <div class="image-wrapper">
+              <img
+                src={item.image}
+                alt={`Testimonio ${item.id}`}
+                loading="lazy"
+              />
+              <div class="overlay">
+                <p class="overlay-comment">"{item.comment}"</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 
-  <!-- Tercera parte: Grid de transformaciones -->
-  <div class="transformations-grid">
-    <div class="transformation-item">
-      <img src="/images/Testimonio1.jpeg" alt="Transformation 1" />
-    </div>
-    <div class="transformation-item">
-      <img src="/images/Testimonio2.jpeg" alt="Transformation 2" />
-    </div>
-    <div class="transformation-item">
-      <img src="/images/Testimonio3.jpeg" alt="Transformation 3" />
-    </div>
-    <div class="transformation-item">
-      <img src="/images/Testimonio4.jpeg" alt="Transformation 4" />
-    </div>
-    <div class="transformation-item">
-      <img src="/images/Testimonio5.jpeg" alt="Transformation 5" />
-    </div>
-    <div class="transformation-item">
-      <img src="/images/Testimonio6.jpeg" alt="Transformation 6" />
-
+  <!-- Video Testimonials -->
+  <div class="videos-container">
+    <h3 class="section-title">TESTIMONIOS EN VIDEO</h3>
+    <div class="videos-grid">
+      {
+        videoTestimonials.map((item) => (
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src={`https://www.youtube.com/embed/${item.id}`}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </div>
+            <div class="video-overlay-static">
+              <p class="video-comment">"{item.comment}"</p>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
-<ContactBar />
 
 <style>
   .empower-section {
+    background: #050505;
+    color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
     width: 100%;
-    background: #fff;
   }
 
-  /* Intro con fondo blanco */
+  .empower-section * {
+    box-sizing: border-box;
+  }
+
+  /* Intro */
   .empower-intro {
-    background: linear-gradient(135deg, #222 0%, #111 100%);
-    padding: 80px 40px;
+    background: linear-gradient(to bottom, #000000, #111111);
+    padding: 100px 20px;
     text-align: center;
-  }
-
-  .logo {
-    margin-bottom: 40px;
+    width: 100%;
   }
 
   .logo img {
-    height: 60px;
-   transition: ease 0.3s;
-}
-
-    .logo img:hover {
-    transform: scale(1.2);
+    height: 90px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px rgba(211, 197, 136, 0.3));
   }
+
   .empower-intro h2 {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.6;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
     color: #fff;
-    margin: 0 0 30px 0;
-    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0 auto 20px;
+    max-width: 800px;
+    letter-spacing: 2px;
   }
 
   .highlight-text {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    margin: 0 0 40px 0;
-    line-height: 1.6;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  .video-btn {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 16px 40px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #d3c588;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
     text-transform: uppercase;
   }
 
-  .video-btn:hover {
-    background: #333;
-    transform: scale(1.05);
+  .btn-buy {
+    background: #d3c588;
+    color: #000;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
   }
 
-  /* Grid con coaches */
-  .empower-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: #000;
+  .btn-buy:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(211, 197, 136, 0.4);
   }
 
-  .coaches-image {
-    position: relative;
-    background: #000;
-    padding: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .coach-card {
+  /* Section Titles */
+  .section-title {
     text-align: center;
-  }
-
-  .coach-card img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-
-  .coach-info h3 {
+    font-size: 3rem;
+    font-weight: 900;
     color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 8px 0;
-    letter-spacing: 1px;
+    margin: 80px 0 50px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
   }
 
-  .coach-info p {
-    color: #999;
-    font-size: 14px;
-    margin: 0;
-    letter-spacing: 1px;
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d3c588;
+    margin: 20px auto 0;
   }
 
-  .empower-text {
-    background: #000;
-    color: #fff;
-    padding: 80px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .empower-text h3 {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 0 0 24px 0;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-
-  .empower-text p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 0 0 32px 0;
-    color: #ccc;
-  }
-
-  .empower-text h4 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0 0 16px 0;
-  }
-
-  .empower-text ul {
-    list-style: none;
-    padding: 0;
+  /* Image Grid - Masonry/Gallery Style */
+  .testimonials-container {
+    padding: 0 20px 80px;
+    width: 100%;
+    max-width: none;
     margin: 0;
   }
 
-  .empower-text li {
-    font-size: 16px;
-    line-height: 2;
-    color: #ccc;
-  }
-
-  .empower-text li::before {
-    content: "✓ ";
-    color: #4CAF50;
-    font-weight: bold;
-    margin-right: 8px;
-  }
-
-  /* Grid de transformaciones */
   .transformations-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
-    background-color: #000;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
   }
 
-  .transformation-item {
+  .testimonial-card {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 3/4;
-    margin: 5px;
-
-    
+    border-radius: 4px;
+    background: #111;
+    aspect-ratio: 3/4; /* Consistent portrait ratio */
+    cursor: pointer;
   }
 
-  .transformation-item img {
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: grayscale(20%);
   }
 
-  .transformation-item:hover img {
-    transform: scale(1.05);
+  .testimonial-card:hover .image-wrapper img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .testimonial-card:hover .overlay {
+    transform: translateY(0);
+  }
+
+  .overlay-comment {
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    border-left: 3px solid #d3c588;
+    padding-left: 15px;
+  }
+
+  /* Video Grid - TikTok Style */
+  .videos-container {
+    background-color: #111;
+    padding: 60px 20px 100px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .video-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 9/16;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    background: #000;
+  }
+
+  .video-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-overlay-static {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    pointer-events: none; /* Allow clicking on the video */
+  }
+
+  .video-comment {
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   }
 
   /* Responsive */
-  @media (max-width: 1024px) {
-    .empower-content {
-      grid-template-columns: 1fr;
-    }
-
-    .coaches-image {
-      flex-direction: column;
-      padding: 40px;
-    }
-
-    .transformations-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
   @media (max-width: 768px) {
-    .empower-intro {
-      padding: 60px 20px;
-    }
-
-    .empower-intro h2 {
-      font-size: 18px;
-    }
-
-    .highlight-text {
-      font-size: 14px;
-    }
-
-    .empower-text {
-      padding: 40px 20px;
-    }
-
-    .empower-text h3 {
-      font-size: 24px;
+    .section-title {
+      font-size: 2rem;
     }
 
     .transformations-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      gap: 15px;
     }
 
-    .coach-card img {
-      width: 150px;
-      height: 225px;
+    .testimonial-card {
+      aspect-ratio: 4/5;
+    }
+
+    .overlay {
+      transform: translateY(0); /* Always show comment on mobile */
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        transparent 100%
+      );
+    }
+
+    .videos-grid {
+      grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+      gap: 15px;
     }
   }
 </style>

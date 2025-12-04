@@ -2,12 +2,10 @@
 import Navbar from "../components/navbar.astro";
 import BackgroundImage from "../components/banner.astro";
 import Footer from "../components/Footer.astro";
-const fondoPrincipal = `url('/images/6.webp')`;
-import ConsultationsSection from "../components/ConsultationsSection.astro";
-import SmoothScroll from "../components/SmoothScroll.astro";
+const fondoPrincipal = `url('/images/2.webp')`;
+import EbooksSection from "../components/EbooksSection.astro";
 import ContactBar from "../components/ContactBar.astro";
-import MotivationSection from "../components/MotivationSection.astro";
-import AboutSection from "../components/AboutSection.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
 ---
 
 <html lang="es">
@@ -23,7 +21,7 @@ import AboutSection from "../components/AboutSection.astro";
 
     <BackgroundImage
       imageUrl={fondoPrincipal}
-      title="CONOCE EL VERDADERO CAMBIO "
+      title="EL CAMBIO NO SOLO ES FISICO"
     />
 
     <!-- Spacer que se ajusta dinámicamente -->
@@ -31,10 +29,10 @@ import AboutSection from "../components/AboutSection.astro";
 
     <!-- Wrapper del contenido que aparecerá sobre el banner -->
     <div class="content-wrapper">
-      <AboutSection />
-      <MotivationSection />
+      <EbooksSection />
       <ContactBar />
     </div>
+
     <Footer />
     <SmoothScroll />
   </body>

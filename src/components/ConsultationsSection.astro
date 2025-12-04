@@ -1,108 +1,193 @@
 ---
-import CoachingCard from './CoachingCard.astro';
-import ContactBar from '../components/ContactBar.astro';
+// components/ConsultationsSection.astro
 ---
 
-<section class="consultations-section">
-  <!-- Grid de 2 tarjetas -->
-  <div class="cards-grid">
-    <CoachingCard 
-      title="MI PROPOPOSITO"
-      subtitle="CONOCE MIS METODOS DE COACHING"
-      backgroundColor="#222"
-    />
-    
-    <CoachingCard 
-      title="TESTOMONIOS"
-      subtitle="CONOCE LAS OPINIONES DE MIS CLIENTES"
-      backgroundColor="#333"
-    />
-  </div>
+<section class="who-am-i-section">
+  <div class="container">
+    <div class="grid-layout">
+      <!-- Image Column -->
+      <div class="image-column">
+        <div class="image-wrapper">
+          <img src="/images/1.webp" alt="Julián Restrepo" />
+          <div class="image-overlay"></div>
+        </div>
+      </div>
 
-  <!-- Grid de texto y video -->
-  <div class="content-grid">
-    <div class="text-content">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quisquam pariatur, at fugiat expedita quod? Pariatur iusto esse asperiores dolorem est, illo dolore nesciunt maiores voluptate sit nihil et dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias deleniti magnam ea nisi laborum, corporis ab ad dolore, neque accusamus tempora perferendis error exercitationem vel dicta nihil, quidem nulla quam.
-      </p>
-    </div>
+      <!-- Text Column -->
+      <div class="text-column">
+        <h2 class="section-title">QUIÉN SOY</h2>
+        <h3 class="section-subtitle">
+          Más que un entrenador, un aliado en tu progreso.
+        </h3>
 
-    <div class="video-content">
-      <div class="play-button">
-        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-          <circle cx="40" cy="40" r="40" fill="rgba(255,255,255,0.9)"/>
-          <path d="M32 25L55 40L32 55V25Z" fill="#000"/>
-        </svg>
+        <div class="prose">
+          <p>
+            Soy Julián Restrepo, profesional en Actividad Física y Deporte
+            egresado de la Universidad Luis Amigó, y técnico en Entrenamiento
+            Deportivo del CEFIT.
+          </p>
+          <p>
+            A lo largo de mi carrera he complementado mi formación con múltiples
+            diplomados en entrenamiento y nutrición aplicada, tanto en Colombia
+            como en España.
+          </p>
+          <p>
+            Pero más allá de los títulos, mi valor está en cómo acompaño a las
+            personas: con presencia, seguimiento y estrategia. Trabajo con
+            hombres y mujeres reales, personas que tienen poco tiempo,
+            responsabilidades, rutinas caóticas… pero que aun así quieren verse
+            y sentirse mejor.
+          </p>
+          <p>
+            No necesitas ser un atleta para empezar; necesitas querer cambiar.
+            Mi método está diseñado para quienes buscan recuperar el control,
+            para quienes quieren dejar de improvisar y entrenar con propósito.
+          </p>
+          <p>
+            Creo en el poder del acompañamiento cercano, en la constancia y en
+            la estructura. Te enseño a construir hábitos sólidos, a entrenar con
+            intención y a creer nuevamente en tu capacidad de lograrlo.
+          </p>
+          <p class="highlight">
+            Si decides hacerlo conmigo, no estarás solo: estaré contigo en cada
+            paso del proceso.
+          </p>
+          <p class="closing">
+            No trabajo con cualquiera. Solo con personas dispuestas a
+            comprometerse con su proceso, con honestidad y constancia. Si buscas
+            excusas… este no es tu camino. Pero si estás lista para darlo todo,
+            aquí empieza tu próximo nivel.
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <ContactBar />
 </section>
 
 <style>
-  .consultations-section {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    background: #111;
-    z-index: 100;
-  }
-
-  .cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-
-  }
-
-  .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-
-  }
-
-  .text-content {
+  .who-am-i-section {
     background-color: #111;
-    padding: 60px;
-    display: flex;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  .text-content p {
     color: #fff;
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 0;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .video-content {
-    background-color: #222;
-    display: flex;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
     align-items: center;
-    justify-content: center;
-    min-height: 400px;
+  }
+
+  @media (min-width: 992px) {
+    .grid-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Image Styles */
+  .image-column {
     position: relative;
   }
 
-  .play-button {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  .image-wrapper {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
-  .play-button:hover {
-    transform: scale(1.1);
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%) contrast(1.1);
+    transition: all 0.5s ease;
+  }
+
+  .image-wrapper:hover img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.02);
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Text Styles */
+  .text-column {
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #d3c588;
+    margin: 0 0 40px 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .prose p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+
+  .prose .highlight {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-left: 3px solid #d3c588;
+    padding-left: 20px;
+    margin: 30px 0;
+  }
+
+  .prose .closing {
+    color: #d3c588;
+    font-weight: 700;
+    margin-top: 30px;
+    font-size: 1.1rem;
   }
 
   @media (max-width: 768px) {
-    .cards-grid,
-    .content-grid {
-      grid-template-columns: 1fr; 
+    .who-am-i-section {
+      padding: 60px 20px;
     }
 
-    .consultations-section{
-      margin-bottom: 770px;
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
     }
   }
 </style>

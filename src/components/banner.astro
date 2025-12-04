@@ -70,6 +70,13 @@ h1 {
     z-index: 1;
     filter: brightness(0.6);
   }
-  
+
+  /* Control de imagen en móviles */
+  @media (max-width: 768px) {
+    .mi-banner::before {
+      background-position: 75% 10%;
+      background-size: cover;
+    }
+  }
 
 </style>

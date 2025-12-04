@@ -2,12 +2,10 @@
 import Navbar from "../components/navbar.astro";
 import BackgroundImage from "../components/banner.astro";
 import Footer from "../components/Footer.astro";
-const fondoPrincipal = `url('/images/6.webp')`;
-import ConsultationsSection from "../components/ConsultationsSection.astro";
-import SmoothScroll from "../components/SmoothScroll.astro";
+const fondoPrincipal = `url('/images/2.webp')`;
+import PlansSection from "../components/PlansSection.astro";
 import ContactBar from "../components/ContactBar.astro";
-import MotivationSection from "../components/MotivationSection.astro";
-import AboutSection from "../components/AboutSection.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
 ---
 
 <html lang="es">
@@ -18,12 +16,12 @@ import AboutSection from "../components/AboutSection.astro";
     <meta name="generator" content={Astro.generator} />
     <title>JulianRpoTrainer</title>
   </head>
-  <body style="margin:0; background:#111;">
+  <body style="margin:0; background:#111; overflow-x: hidden;">
     <Navbar />
 
     <BackgroundImage
       imageUrl={fondoPrincipal}
-      title="CONOCE EL VERDADERO CAMBIO "
+      title="EL CAMBIO NO SE ESPERA SE ENTRENA"
     />
 
     <!-- Spacer que se ajusta dinámicamente -->
@@ -31,16 +29,22 @@ import AboutSection from "../components/AboutSection.astro";
 
     <!-- Wrapper del contenido que aparecerá sobre el banner -->
     <div class="content-wrapper">
-      <AboutSection />
-      <MotivationSection />
+      <PlansSection />
       <ContactBar />
     </div>
+
     <Footer />
     <SmoothScroll />
   </body>
 </html>
 
 <style>
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
   .scroll-spacer {
     height: 900px; /* Altura inicial que coincide con min-height del banner */
     pointer-events: none;
@@ -49,6 +53,6 @@ import AboutSection from "../components/AboutSection.astro";
   .content-wrapper {
     position: relative;
     z-index: 100;
-    background: #000;
+    width: 100%;
   }
 </style>

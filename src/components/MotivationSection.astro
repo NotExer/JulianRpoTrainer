@@ -1,0 +1,167 @@
+---
+
+---
+
+<section class="motivation-section">
+    <div class="motivation-container">
+        <div class="image-column">
+            <!-- Placeholder image, user can replace with their group photo -->
+            <img
+                src="/images/1.webp"
+                alt="Equipo JulianRpo"
+                class="motivation-image"
+            />
+            <div class="overlay"></div>
+        </div>
+
+        <div class="content-column">
+            <h2 class="title">ASESORÍA 1 A 1</h2>
+            <h3 class="price">INVIERTE EN TU SALUD</h3>
+
+            <p class="description">
+                En estas sesiones analizaremos tu proceso actual, incluyendo tus
+                planes y configuración para sugerir dónde se pueden hacer
+                mejoras y discutir cómo maximizar tu progreso. Es tu momento
+                para hacer preguntas y utilizar el extenso conocimiento en
+                entrenamiento, nutrición y suplementación.
+            </p>
+
+            <a href="https://calendly.com/julianrpotrainer/resolviendo-dudas-de-entrenamiento-y-nutricion" target="_blank" class="cta-button">RESERVAR CONSULTA</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .motivation-section {
+        background-color: #000;
+        color: #fff;
+        width: 100%;
+        font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif;
+    }
+
+    .motivation-container {
+        display: flex;
+        flex-direction: row;
+        min-height: 500px;
+    }
+
+    .image-column {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .motivation-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+        display: none; /* Hidden by default, can be enabled if needed */
+    }
+
+    .content-column {
+        flex: 1;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+        margin-bottom: 10px;
+        padding: 0 60px;
+    }
+
+    .price {
+        font-size: 2.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #d3c588; /* Red color from reference image */
+        margin: 0 0 20px 0;
+        line-height: 1.1;
+        padding: 0 60px;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #ccc;
+        margin-bottom: 40px;
+        max-width: 600px;
+        padding: 0 60px;
+    }
+
+    .cta-button {
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 15px 30px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-left: 60px;
+    }
+
+    .cta-button:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    @media (max-width: 900px) {
+        .motivation-container {
+            flex-direction: column;
+        }
+
+        .image-column {
+            height: 300px;
+        }
+
+        .content-column {
+            padding: 40px 20px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 2rem;
+        }
+
+        .cta-button {
+            margin-left: 0;
+        }
+    }
+</style>

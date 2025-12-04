@@ -1,0 +1,263 @@
+---
+// CheckoutSection.astro
+const ebooks = [
+    {
+        id: 1,
+        title: "GUÍA DE NUTRICIÓN DEPORTIVA",
+        price: "29.99",
+        image: "/images/ebook1.webp",
+        description:
+            "Descubre los secretos de la nutrición deportiva con esta guía completa. Aprende a optimizar tu alimentación para maximizar tus resultados en el gimnasio y mejorar tu composición corporal.",
+    },
+    {
+        id: 2,
+        title: "PLAN DE ENTRENAMIENTO AVANZADO",
+        price: "39.99",
+        image: "/images/ebook2.webp",
+        description:
+            "Rutinas profesionales diseñadas para llevarte al siguiente nivel. Incluye programas de fuerza, hipertrofia y definición muscular con técnicas avanzadas de entrenamiento.",
+    },
+    {
+        id: 3,
+        title: "RECETAS FITNESS",
+        price: "24.99",
+        image: "/images/ebook3.webp",
+        description:
+            "Más de 50 recetas deliciosas y saludables para alcanzar tus objetivos. Comidas balanceadas, fáciles de preparar y perfectas para tu estilo de vida fitness.",
+    },
+];
+
+const { productId } = Astro.props;
+// Also try to get from URL params if not passed as prop (for direct page access)
+const urlProductId = Astro.url.searchParams.get("productId");
+const idToUse = productId || urlProductId;
+
+const selectedEbook = ebooks.find((e) => e.id == idToUse) || ebooks[0]; // Default to first if not found
+---
+
+<section class="checkout-section">
+    <div class="container">
+        <div class="checkout-grid">
+            <!-- Left Column: Payment -->
+            <div class="payment-column">
+                <h2 class="column-title">MÉTODO DE PAGO</h2>
+                <div class="payment-card">
+                    <div id="paypal-button-container" class="paypal-container">
+                    </div>
+                </div>
+              
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="summary-column">
+                <h2 class="column-title">RESUMEN DEL PEDIDO</h2>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img
+                            src={selectedEbook.image}
+                            alt={selectedEbook.title}
+                            class="product-image"
+                        />
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">{selectedEbook.title}</h3>
+                        <p class="product-description">
+                            {selectedEbook.description}
+                        </p>
+                        <div class="price-row">
+                            <span>Total a pagar:</span>
+                            <span class="total-price"
+                                >${selectedEbook.price}</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script define:vars={{ selectedEbook }}>
+    const CLIENT_ID =
+        "AdiDzE-xMnufghuTrnoUNXWATuyAWh-T_GrZ9BQajojAEgtWg53cugm04twlrIkgfwSoBwfYyj8q1Inz";
+
+    const loadPayPalScript = () => {
+        if (window.paypal) return Promise.resolve();
+
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&currency=USD`;
+            script.async = true;
+            script.onload = () => resolve();
+            script.onerror = (err) => reject(err);
+            document.head.appendChild(script);
+        });
+    };
+
+    const renderButton = () => {
+        if (!window.paypal) return;
+
+        const container = document.getElementById("paypal-button-container");
+        if (!container) return;
+        container.innerHTML = "";
+
+        window.paypal
+            .Buttons({
+                style: {
+                    layout: "vertical",
+                    color: "gold",
+                    shape: "rect",
+                    label: "pay",
+                },
+                createOrder: (data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [
+                            {
+                                description: selectedEbook.title,
+                                amount: {
+                                    value: selectedEbook.price,
+                                },
+                            },
+                        ],
+                    });
+                },
+                onApprove: (data, actions) => {
+                    return actions.order.capture().then((details) => {
+                        alert(
+                            `¡Pago exitoso! Gracias ${details.payer.name.given_name}`,
+                        );
+                        window.location.href = "/"; // Redirect to home after purchase
+                    });
+                },
+                onError: (err) => {
+                    console.error("PayPal Error:", err);
+                    alert("Hubo un error al procesar el pago.");
+                },
+            })
+            .render("#paypal-button-container");
+    };
+
+    loadPayPalScript()
+        .then(renderButton)
+        .catch((err) => console.error("PayPal Init Failed:", err));
+</script>
+
+<style>
+    .checkout-section {
+        background: #000;
+
+        padding: 120px 20px 60px;
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .checkout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .column-title {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #333;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Payment Column */
+    .payment-card {
+        background: #111;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #333;
+    }
+
+    .secure-badge {
+        margin-top: 20px;
+        text-align: center;
+        color: #888;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Summary Column */
+    .product-card {
+        background: #111;
+        border-radius: 12px;
+        border: 1px solid #333;
+        overflow: hidden;
+    }
+
+    .product-image-wrapper {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product-details {
+        padding: 30px;
+    }
+
+    .product-title {
+        color: #fff;
+        font-size: 1.8rem;
+        margin: 0 0 15px 0;
+    }
+
+    .product-description {
+        color: #999;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    .total-price {
+        color: #d3c588;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    @media (max-width: 900px) {
+        .checkout-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .checkout-grid > :first-child {
+            order: 2; /* Put payment below summary on mobile */
+        }
+
+        .checkout-grid > :last-child {
+            order: 1;
+        }
+    }
+</style>
