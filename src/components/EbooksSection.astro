@@ -4,7 +4,7 @@ const ebooks = [
     {
         id: 1,
         title: "GUÍA DE NUTRICIÓN DEPORTIVA",
-        price: "29.99",
+
         image: "/images/ebook1.webp",
         description:
             "Descubre los secretos de la nutrición deportiva con esta guía completa. Aprende a optimizar tu alimentación para maximizar tus resultados en el gimnasio y mejorar tu composición corporal.",
@@ -12,7 +12,7 @@ const ebooks = [
     {
         id: 2,
         title: "PLAN DE ENTRENAMIENTO AVANZADO",
-        price: "39.99",
+        
         image: "/images/ebook2.webp",
         description:
             "Rutinas profesionales diseñadas para llevarte al siguiente nivel. Incluye programas de fuerza, hipertrofia y definición muscular con técnicas avanzadas de entrenamiento.",
@@ -20,7 +20,7 @@ const ebooks = [
     {
         id: 3,
         title: "RECETAS FITNESS",
-        price: "24.99",
+
         image: "/images/ebook3.webp",
         description:
             "Más de 50 recetas deliciosas y saludables para alcanzar tus objetivos. Comidas balanceadas, fáciles de preparar y perfectas para tu estilo de vida fitness.",
@@ -55,12 +55,9 @@ const ebooks = [
                             <p class="ebook-description">{ebook.description}</p>
 
                             <div class="ebook-footer">
-                                <span class="ebook-price">${ebook.price}</span>
-                                <a
-                                    href={`/checkout?productId=${ebook.id}`}
-                                    class="btn-buy"
-                                >
-                                    COMPRAR AHORA
+                        
+                                <a href="#" class="btn-buy" download>
+                                    DESCARGAR AHORA
                                 </a>
                             </div>
                         </div>

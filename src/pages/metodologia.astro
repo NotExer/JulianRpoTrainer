@@ -42,6 +42,19 @@ import SmoothScroll from "../components/SmoothScroll.astro";
 </html>
 
 <style>
+    html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     .scroll-spacer {
         height: 900px; /* Altura inicial que coincide con min-height del banner */
         pointer-events: none;
@@ -51,5 +64,7 @@ import SmoothScroll from "../components/SmoothScroll.astro";
         position: relative;
         z-index: 100;
         background: #000;
+        width: 100%;
+        box-sizing: border-box;
     }
 </style>

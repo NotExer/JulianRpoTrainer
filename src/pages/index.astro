@@ -6,7 +6,8 @@ const fondoPrincipal = `url('/images/4.webp')`;
 import ContactBar from "../components/ContactBar.astro";
 import SmoothScroll from "../components/SmoothScroll.astro";
 import MotivationSection from "../components/MotivationSection.astro";
-import IntroSection from "../components/IntroSection.astro";
+import IntroPart1 from "../components/IntroPart1.astro";
+import IntroPart2 from "../components/IntroPart2.astro";
 ---
 
 <html lang="es">
@@ -30,7 +31,8 @@ import IntroSection from "../components/IntroSection.astro";
 
     <!-- Wrapper del contenido que aparecerá sobre el banner -->
     <div class="content-wrapper">
-      <IntroSection />
+      <IntroPart1 />
+      <IntroPart2 />
       <MotivationSection />
       <ContactBar />
     </div>
@@ -41,6 +43,19 @@ import IntroSection from "../components/IntroSection.astro";
 </html>
 
 <style>
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .scroll-spacer {
     height: 900px; /* Altura inicial que coincide con min-height del banner */
     pointer-events: none;
@@ -50,5 +65,7 @@ import IntroSection from "../components/IntroSection.astro";
     position: relative;
     z-index: 100;
     width: 100%;
+    background: #000;
+    box-sizing: border-box;
   }
 </style>

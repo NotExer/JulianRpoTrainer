@@ -8,6 +8,7 @@ import SmoothScroll from "../components/SmoothScroll.astro";
 import ContactBar from "../components/ContactBar.astro";
 import MotivationSection from "../components/MotivationSection.astro";
 import AboutSection from "../components/AboutSection.astro";
+import AboutBio from "../components/AboutBio.astro";
 ---
 
 <html lang="es">
@@ -32,6 +33,7 @@ import AboutSection from "../components/AboutSection.astro";
     <!-- Wrapper del contenido que aparecerá sobre el banner -->
     <div class="content-wrapper">
       <AboutSection />
+      <AboutBio />
       <MotivationSection />
       <ContactBar />
     </div>
@@ -41,6 +43,19 @@ import AboutSection from "../components/AboutSection.astro";
 </html>
 
 <style>
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .scroll-spacer {
     height: 900px; /* Altura inicial que coincide con min-height del banner */
     pointer-events: none;
@@ -50,5 +65,7 @@ import AboutSection from "../components/AboutSection.astro";
     position: relative;
     z-index: 100;
     background: #000;
+    width: 100%;
+    box-sizing: border-box;
   }
 </style>

@@ -1,0 +1,160 @@
+---
+
+---
+
+<section class="about-bio">
+    <div class="bio-container">
+        <div class="content-column">
+            <h2 class="title">Hola, soy Julián</h2>
+
+            <h3 class="subtitle">Coach de Entrenamiento Personal</h3>
+            <p class="description">
+                Teniendo más de 10 años de experiencia en la industria del
+                fitness, tanto como entrenador y atleta, soy capaz de aprovechar
+                mi gran experiencia para ayudarte a progresar. También he tenido
+                el placer de trabajar y aprender de algunos de los mejores
+                mentores que esta industria tiene para ofrecer.
+            </p>
+
+            <p class="description">
+                Esto me ha permitido probar diferentes métodos y llevar lo que
+                he aprendido a mi entrenamiento. Cuando te unes al equipo,
+                tienes acceso a este conocimiento y experiencia, lo que te
+                ayudará a convertirte en el mejor atleta posible.
+            </p>
+        </div>
+
+        <div class="image-column">
+            <img src="/images/4.webp" alt="Julián Restrepo Coach" />
+            <div class="overlay"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-bio {
+        background-color: #000;
+        color: #fff;
+        width: 100%;
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+    }
+
+    .bio-container {
+        display: flex;
+        flex-direction: row;
+        min-height: 500px;
+        width: 100%;
+    }
+
+    .image-column {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(20%);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+        pointer-events: none;
+    }
+
+    .content-column {
+        flex: 1;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Center align items */
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 5px;
+        padding: 0 60px;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        text-align: left; /* Start aligned */
+        width: 100%;
+        max-width: 550px; /* Match description width */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.4;
+        padding: 0 60px;
+        opacity: 0.9;
+        margin: 0 0 25px 0;
+        text-align: left; /* Start aligned */
+        width: 100%;
+        max-width: 550px; /* Match description width */
+    }
+
+    .description {
+        font-size: 0.85rem; /* Small but legible */
+        line-height: 1.8; /* Generous spacing */
+        color: #d1d1d1; /* Soft white */
+        margin-bottom: 20px;
+        padding: 0 60px;
+        max-width: 550px;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        text-align: start; /* Center text, not justified */
+    }
+
+    @media (max-width: 968px) {
+        .bio-container {
+            flex-direction: column-reverse; /* Image Top, Text Bottom */
+        }
+
+        .image-column {
+            height: 400px;
+            flex: none;
+            width: 100%;
+        }
+
+        .content-column {
+            padding: 50px 20px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title,
+        .subtitle,
+        .description {
+            padding: 0;
+            text-align: center; /* Center on mobile to match responsive design */
+        }
+
+        .title {
+            font-size: 1.4rem;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            text-align: start; /* Center on mobile to match responsive design */
+        }
+    }
+</style>
