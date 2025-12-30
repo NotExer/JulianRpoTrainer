@@ -4,15 +4,7 @@
 
 <section class="methodology-result">
     <div class="content-grid">
-        <!-- Imagen a la izquierda -->
-        <div class="result-image">
-            <img
-                src="/images/7.webp"
-                alt="Resultados del método De Cero a Fitness"
-            />
-        </div>
-
-        <!-- Contenido a la derecha -->
+        <!-- Contenido a la izquierda -->
         <div class="text-content">
             <h2 class="section-title">EL RESULTADO</h2>
 
@@ -31,6 +23,14 @@
                     >
                 </p>
             </div>
+        </div>
+
+        <!-- Imagen a la derecha -->
+        <div class="result-image">
+            <img
+                src="/images/7.webp"
+                alt="Resultados del método De Cero a Fitness"
+            />
         </div>
     </div>
 </section>
@@ -65,6 +65,11 @@
         object-fit: cover;
         object-position: center;
         display: block;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .result-image:hover img {
+        scale: 1.05;
     }
 
     /* Contenido */

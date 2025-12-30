@@ -4,7 +4,15 @@
 
 <section class="methodology-process">
     <div class="content-grid">
-        <!-- Contenido a la izquierda -->
+        <!-- Imagen a la izquierda -->
+        <div class="process-image">
+            <img
+                src="/images/2.webp"
+                alt="Proceso de entrenamiento personalizado"
+            />
+        </div>
+
+        <!-- Contenido a la derecha -->
         <div class="text-content">
             <h2 class="section-title">¿CÓMO LO HAGO?</h2>
 
@@ -28,14 +36,6 @@
                     y seguimiento.
                 </p>
             </div>
-        </div>
-
-        <!-- Imagen a la derecha -->
-        <div class="process-image">
-            <img
-                src="/images/2.webp"
-                alt="Proceso de entrenamiento personalizado"
-            />
         </div>
     </div>
 </section>
@@ -67,7 +67,7 @@
             system-ui,
             -apple-system,
             sans-serif;
-        order: 1; /* Texto primero en desktop */
+        order: 2; /* Texto segundo en desktop */
     }
 
     /* Imagen */
@@ -77,8 +77,10 @@
         height: 100%;
         overflow: hidden;
         background-color: #111;
-        order: 2; /* Imagen segunda en desktop */
+        order: 1; /* Imagen primera en desktop */
+
     }
+
 
     .process-image img {
         width: 100%;
@@ -86,6 +88,11 @@
         object-fit: cover;
         object-position: center;
         display: block;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .process-image:hover img {
+        scale: 1.02;
     }
 
     .section-title {

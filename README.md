@@ -1,46 +1,51 @@
-# Astro Starter Kit: Basics
+# JulianRpoTrainer
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este es el repositorio oficial para el sitio web de **JulianRpoTrainer**, enfocado en entrenamiento personal y motivación.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Tecnologías
 
-## 🚀 Project Structure
+Este proyecto está construido con:
 
-Inside of your Astro project, you'll see the following folders and files:
+- **[Astro](https://astro.build/)**: Framework web para sitios rápidos enfocados en contenido.
+- **[@studio-freight/lenis](https://github.com/darkroomengineering/lenis)**: Librería para smooth scrolling.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 🛠️ Instalación y Uso
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
 
-## 🧞 Commands
+1.  **Clonar el repositorio:**
 
-All commands are run from the root of the project, from a terminal:
+    ```bash
+    git clone https://github.com/NotExer/JulianRpoTrainer.git
+    cd JulianRpoTrainer
+    ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2.  **Instalar dependencias:**
 
-## 👀 Want to learn more?
+    ```bash
+    npm install
+    ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3.  **Iniciar el servidor de desarrollo:**
+
+    ```bash
+    npm run dev
+    ```
+
+    El sitio estará disponible en `http://localhost:4321`.
+
+## 📜 Scripts Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Construye el sitio para producción.
+- `npm run preview`: Vista previa de la build de producción.
+
+## 📂 Estructura del Proyecto
+
+- `src/components`: Componentes reutilizables (Navbar, Banner, Footer, etc.).
+- `src/pages`: Páginas del sitio (actualmente `index.astro`).
+- `public`: Assets estáticos.
+
+## 📝 Licencia
+
+Este proyecto es para uso privado de JulianRpoTrainer.

@@ -1,256 +1,172 @@
 ---
-// components/PurposeSection.astro
+
 ---
 
-<section class="purpose-section">
-    <div class="purpose-grid">
-        <!-- Tarjeta principal con imagen de fondo -->
-        <div class="purpose-card main-card">
-            <div
-                class="card-image"
-                style="background-image: url('/images/purpose-bg.webp')"
-            >
-                <div class="card-overlay">
-                    <h2 class="section-title">MI PROPÓSITO</h2>
-                    <p class="highlight-text">
-                        Mi propósito es acompañarte a reconectar con tu cuerpo y
-                        con tu disciplina.
-                    </p>
-                </div>
-            </div>
+<section class="purpose-bio">
+    <div class="bio-container">
+        <div class="content-column">
+            <h2 class="title">MI PROPÓSITO</h2>
+
+            <h3 class="subtitle">
+                Mi propósito es acompañarte a reconectar con tu cuerpo y con tu
+                disciplina.
+            </h3>
+            <p class="description">
+                Porque sé que el cambio no viene de un día perfecto, sino de la
+                constancia cuando nadie te ve.
+            </p>
+            <p class="description">
+                Entrenar no es solo mover pesas o contar calorías; es construir
+                una identidad nueva: una que cumple lo que promete y no se rinde
+                cuando la motivación baja.
+            </p>
+            <p class="description">
+                Mi trabajo es darte estructura, dirección y una guía que te
+                enseñe a avanzar con criterio, sin caos, sin adivinanzas.
+            </p>
+            <p class="description">
+                No vendo atajos, vendo claridad. Y con claridad, todo cambia. Si
+                decides trabajar conmigo, no solo vas a entrenar vas a
+                evolucionar.
+            </p>
         </div>
 
-        <!-- Tarjeta de contenido de texto -->
-        <div class="purpose-card text-card">
-            <div class="text-content">
-                <p>
-                    Porque sé que el cambio no viene de un día perfecto, sino de
-                    la constancia cuando nadie te ve.
-                </p>
-                <p>
-                    Entrenar no es solo mover pesas o contar calorías; es
-                    construir una identidad nueva: una que cumple lo que promete
-                    y no se rinde cuando la motivación baja.
-                </p>
-                <p>
-                    Mi trabajo es darte estructura, dirección y una guía que te
-                    enseñe a avanzar con criterio, sin caos, sin adivinanzas.
-                </p>
-            </div>
-        </div>
-
-        <!-- Tarjeta de énfasis -->
-        <div class="purpose-card emphasis-card">
-            <div class="emphasis-content">
-                <p class="emphasis-text">
-                    No vendo atajos, vendo claridad. Y con claridad, todo
-                    cambia.
-                </p>
-                <p class="final-text">
-                    Si decides trabajar conmigo, no solo vas a entrenar… vas a
-                    evolucionar.
-                </p>
-            </div>
+        <div class="image-column">
+            <img src="/images/6.webp" alt="Propósito de Julián Restrepo" />
+            <div class="overlay"></div>
         </div>
     </div>
 </section>
 
 <style>
-    .purpose-section {
-        position: relative;
+    .purpose-bio {
+        background-color: #000;
+        color: #fff;
         width: 100%;
-        background: #000;
-        padding: 0;
         font-family:
             system-ui,
             -apple-system,
             sans-serif;
     }
 
-    .purpose-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0;
+    .bio-container {
+        display: flex;
+        flex-direction: row;
+        min-height: 500px;
+        width: 100%;
     }
 
-    .purpose-card {
+    .image-column {
+        flex: 1;
         position: relative;
-        min-height: 400px;
         overflow: hidden;
     }
 
-    /* Tarjeta principal con imagen */
-    .main-card .card-image {
+    .image-column img {
         width: 100%;
         height: 100%;
-        min-height: 400px;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        background-color: #111;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(20%);
+        transition: all 0.2s ease-in-out;
     }
 
-    .main-card .card-overlay {
+    .image-column img:hover {
+        scale: 1.05;
+    }
+
+    .overlay {
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 0;
-        right: 0;
-        padding: 50px;
+        width: 100%;
+        height: 100%;
         background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.95),
-            rgba(0, 0, 0, 0.6)
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.4) 100%
         );
-        color: #fff;
+        pointer-events: none;
     }
 
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #d3c588;
-        margin-bottom: 20px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-    }
-
-    .highlight-text {
-        font-size: 1.3rem;
-        font-weight: 400;
-        color: #fff;
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    /* Tarjeta de texto */
-    .text-card {
+    .content-column {
+        flex: 1;
         background-color: #000;
         display: flex;
-        align-items: center;
-        grid-row: span 1;
-    }
-
-    .text-content {
-        padding: 50px;
-    }
-
-    .text-content p {
-        color: #e0e0e0;
-        font-size: 16px;
-        line-height: 1.8;
-        margin-bottom: 25px;
-        font-weight: 300;
-    }
-
-    .text-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Tarjeta de énfasis */
-    .emphasis-card {
-        background: linear-gradient(135deg, #111 0%, #000 100%);
-        display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        grid-column: span 2;
-        border-top: 1px solid rgba(211, 197, 136, 0.2);
+        align-items: center; /* Center align items */
     }
 
-    .emphasis-content {
-        padding: 60px;
-        text-align: center;
-        max-width: 900px;
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 5px;
+        padding: 0 60px;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        text-align: left; /* Start aligned */
+        width: 100%;
+        max-width: 550px; /* Match description width */
     }
 
-    .emphasis-text {
-        font-size: 1.4rem;
+    .subtitle {
+        font-size: 1rem;
         font-weight: 600;
         color: #fff;
-        margin-bottom: 30px;
-        line-height: 1.6;
-        position: relative;
-        display: inline-block;
-        padding: 0 30px;
+        line-height: 1.4;
+        padding: 0 60px;
+        opacity: 0.9;
+        margin: 0 0 25px 0;
+        text-align: left; /* Start aligned */
+        width: 100%;
+        max-width: 550px; /* Match description width */
     }
 
-    .emphasis-text::before,
-    .emphasis-text::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 20px;
-        height: 2px;
-        background-color: #d3c588;
+    .description {
+        font-size: 0.85rem; /* Small but legible */
+        line-height: 1.8; /* Generous spacing */
+        color: #d1d1d1; /* Soft white */
+        margin-bottom: 20px;
+        padding: 0 60px;
+        max-width: 550px;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        text-align: start; /* Center text, not justified */
     }
 
-    .emphasis-text::before {
-        left: 0;
-    }
-
-    .emphasis-text::after {
-        right: 0;
-    }
-
-    .final-text {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #d3c588;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .purpose-grid {
-            grid-template-columns: 1fr;
+    @media (max-width: 968px) {
+        .bio-container {
+            flex-direction: column-reverse; /* Image Top, Text Bottom */
         }
 
-        .emphasis-card {
-            grid-column: span 1;
+        .image-column {
+            height: 400px;
+            flex: none;
+            width: 100%;
         }
 
-        .main-card .card-image {
-            min-height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .main-card .card-overlay {
-            padding: 30px 20px;
+        .content-column {
+            padding: 50px 20px;
+            align-items: center;
+            text-align: center;
         }
 
-        .section-title {
-            font-size: 2rem;
-            letter-spacing: 2px;
+        .title,
+        .subtitle,
+        .description {
+            padding: 0;
+            text-align: center; /* Center on mobile to match responsive design */
         }
 
-        .highlight-text {
-            font-size: 1.1rem;
+        .title {
+            font-size: 1.4rem;
         }
 
-        .text-content {
-            padding: 40px 20px;
-        }
-
-        .text-content p {
-            font-size: 15px;
-        }
-
-        .emphasis-content {
-            padding: 40px 20px;
-        }
-
-        .emphasis-text {
-            font-size: 1.1rem;
-            padding: 0 20px;
-        }
-
-        .final-text {
-            font-size: 1.2rem;
-        }
-
-        .purpose-card {
-            min-height: 300px;
+        .description {
+            font-size: 0.9rem;
+            text-align: start; /* Center on mobile to match responsive design */
         }
     }
 </style>

@@ -4,27 +4,27 @@
 
 <section class="methodology-hero">
     <div class="content-grid">
-        <!-- Imagen a la izquierda -->
+        <!-- Contenido a la izquierda -->
+        <div class="text-content">
+            <h1 class="hero-title">MÉTODO "DE CERO A FITNESS"</h1>
+            <p class="hero-author">por Julián Restrepo</p>
+            <p class="hero-description">
+                El método De Cero a Fitnes está diseñado para personas que hoy
+                no se sienten "fitness": tal vez nunca han entrenado en serio,
+                no tienen hábitos claros, comen "más o menos bien" y se sienten
+                perdidas entre tanta información. Mi trabajo es tomar ese punto
+                de partida y convertirlo en un cuerpo más fuerte, saludable y
+                estético, acompañado de hábitos que realmente puedas sostener en
+                el tiempo.
+            </p>
+        </div>
+
+        <!-- Imagen a la derecha -->
         <div class="hero-image">
             <img
                 src="/images/1.webp"
                 alt="Julián Restrepo - Método De Cero a Fitness"
             />
-        </div>
-
-        <!-- Contenido a la derecha -->
-        <div class="text-content">
-            <h1 class="hero-title">MÉTODO "DE CERO A FITNESS"®</h1>
-            <p class="hero-author">por Julián Restrepo</p>
-            <p class="hero-description">
-                El método De Cero a Fitness® está diseñado para personas que
-                hoy no se sienten "fitness": tal vez nunca han entrenado en
-                serio, no tienen hábitos claros, comen "más o menos bien" y se
-                sienten perdidas entre tanta información. Mi trabajo es tomar
-                ese punto de partida y convertirlo en un cuerpo más fuerte,
-                saludable y estético, acompañado de hábitos que realmente puedas
-                sostener en el tiempo.
-            </p>
         </div>
     </div>
 </section>
@@ -51,6 +51,7 @@
         height: 100%;
         overflow: hidden;
         background-color: #111;
+
     }
 
     .hero-image img {
@@ -59,6 +60,11 @@
         object-fit: cover;
         object-position: center;
         display: block;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .hero-image:hover img {
+        scale: 1.02;
     }
 
     /* Contenido */
