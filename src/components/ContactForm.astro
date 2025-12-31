@@ -165,7 +165,7 @@
                 <style>
                     .contact-form-section {
                         padding: 80px 20px;
-                        background-color: #0a0a0a;
+                        background-color: #000;
                         color: #fff;
                         display: flex;
                         justify-content: center;
@@ -188,25 +188,33 @@
                     .form-wrapper {
                         background: #111;
                         padding: 40px;
-                        border: 1px solid #333;
-                        border-radius: 8px;
+                        border: 1px solid #222;
+                        border-radius: 12px;
                         width: 100%;
+                        transition: all 0.3s ease;
+                    }
+
+                    .form-wrapper:hover {
+                        border-color: #333;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
                     }
 
                     h2 {
-                        font-size: 36px;
-                        font-weight: bold;
+                        font-size: 3rem;
+                        font-weight: 900;
                         margin-bottom: 10px;
                         text-align: center;
                         letter-spacing: 2px;
+                        color: #fff;
+                        text-transform: uppercase;
                     }
 
                     p {
                         text-align: center;
                         color: #888;
                         margin-bottom: 40px;
-                        font-size: 14px;
-                        letter-spacing: 1px;
+                        font-size: 1.2rem;
+                        font-weight: 300;
                     }
 
                     .form-group {
@@ -216,10 +224,11 @@
                     label {
                         display: block;
                         margin-bottom: 8px;
-                        font-size: 12px;
-                        font-weight: bold;
+                        font-size: 0.9rem;
+                        font-weight: 700;
                         letter-spacing: 1px;
-                        color: #ccc;
+                        color: #fff;
+                        text-transform: uppercase;
                     }
 
                     input,
@@ -231,16 +240,17 @@
                         border: 1px solid #333;
                         color: #fff;
                         font-family: inherit;
-                        font-size: 16px;
-                        transition: border-color 0.3s ease;
-                        box-sizing: border-box; /* Ensure padding doesn't affect width */
+                        font-size: 1rem;
+                        transition: all 0.3s ease;
+                        border-radius: 4px;
                     }
 
                     input:focus,
                     select:focus,
                     textarea:focus {
                         outline: none;
-                        border-color: #fff;
+                        border-color: #d3c588;
+                        box-shadow: 0 0 10px rgba(211, 197, 136, 0.1);
                     }
 
                     select option {
@@ -250,27 +260,29 @@
 
                     .submit-btn {
                         width: 100%;
-                        padding: 18px;
-                        background: #fff;
+                        padding: 15px;
+                        background: #d3c588;
                         color: #000;
                         border: none;
-                        font-size: 14px;
-                        font-weight: bold;
-                        letter-spacing: 2px;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        letter-spacing: 1px;
                         cursor: pointer;
                         transition: all 0.3s ease;
                         text-transform: uppercase;
                         margin-top: 10px;
+                        border-radius: 4px;
                     }
 
                     .submit-btn:hover:not(:disabled) {
-                        background: #ccc;
+                        background: #fff;
                         transform: translateY(-2px);
                     }
 
                     .submit-btn:disabled {
                         opacity: 0.7;
                         cursor: not-allowed;
+                        background: #888;
                     }
 
                     .form-status {
@@ -279,12 +291,13 @@
                         text-align: center;
                         display: none;
                         font-size: 14px;
+                        border-radius: 4px;
                     }
 
                     .form-status.success {
-                        background: rgba(0, 255, 0, 0.1);
-                        border: 1px solid #00ff00;
-                        color: #00ff00;
+                        background: rgba(211, 197, 136, 0.1);
+                        border: 1px solid #d3c588;
+                        color: #d3c588;
                     }
 
                     .form-status.error {
@@ -303,7 +316,11 @@
                         }
 
                         h2 {
-                            font-size: 28px;
+                            font-size: 2rem;
+                        }
+
+                        p {
+                            font-size: 1rem;
                         }
                     }
                 </style>

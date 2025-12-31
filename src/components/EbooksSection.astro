@@ -3,25 +3,25 @@
 const ebooks = [
     {
         id: 1,
-        title: "GUÍA DE NUTRICIÓN DEPORTIVA",
+        title: "SUPLEMENTOS",
 
-        image: "/images/ebook1.webp",
+        image: "/images/suplementos.webp",
         description:
             "Descubre los secretos de la nutrición deportiva con esta guía completa. Aprende a optimizar tu alimentación para maximizar tus resultados en el gimnasio y mejorar tu composición corporal.",
     },
     {
         id: 2,
-        title: "PLAN DE ENTRENAMIENTO AVANZADO",
-        
-        image: "/images/ebook2.webp",
+        title: "BIENESTAR INTEGRAL",
+
+        image: "/images/bienestar.webp",
         description:
             "Rutinas profesionales diseñadas para llevarte al siguiente nivel. Incluye programas de fuerza, hipertrofia y definición muscular con técnicas avanzadas de entrenamiento.",
     },
     {
         id: 3,
-        title: "RECETAS FITNESS",
+        title: "RECETAS SALUDABLES",
 
-        image: "/images/ebook3.webp",
+        image: "/images/recetas.webp",
         description:
             "Más de 50 recetas deliciosas y saludables para alcanzar tus objetivos. Comidas balanceadas, fáciles de preparar y perfectas para tu estilo de vida fitness.",
     },
@@ -55,7 +55,6 @@ const ebooks = [
                             <p class="ebook-description">{ebook.description}</p>
 
                             <div class="ebook-footer">
-                        
                                 <a href="#" class="btn-buy" download>
                                     DESCARGAR AHORA
                                 </a>
@@ -129,15 +128,16 @@ const ebooks = [
     .ebook-image-wrapper {
         position: relative;
         width: 100%;
-        height: 350px;
+        height: auto;
         overflow: hidden;
         background: #1a1a1a;
     }
 
     .ebook-image {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        display: block;
+        object-fit: contain;
         transition: transform 0.5s ease;
     }
 
@@ -224,9 +224,6 @@ const ebooks = [
         }
         .ebooks-grid {
             grid-template-columns: 1fr;
-        }
-        .ebook-image-wrapper {
-            height: 280px;
         }
     }
 </style>
