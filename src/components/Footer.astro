@@ -19,6 +19,15 @@ const { isFixed = true } = Astro.props;
 
       <!-- Links Column 1 -->
       <div class="footer-links">
+        <h3>MI OBJETIVO</h3>
+        <p>
+          Soy Julián Restrepo, entrenador personal enfocado en ayudarte a
+          alcanzar tus metas físicas y mentales. Transformo vidas a través de
+          planes de entrenamiento y nutrición que priorizan la disciplina y la
+          claridad.
+        </p>
+      </div>
+      <div class="footer-links">
         <a href="/" class="footer-link">INICIO</a>
         <a href="/" class="footer-link">SOBRE MI</a>
         <a href="/" class="footer-link">MI PROCESO</a>
@@ -27,13 +36,6 @@ const { isFixed = true } = Astro.props;
       </div>
 
       <!-- Links Column 2 -->
-      <div class="footer-links">
-        <a href="/" class="footer-link">EMPOWER MOVEMENT</a>
-        <a href="/" class="footer-link">E-BOOKS</a>
-        <a href="/" class="footer-link">MERCH</a>
-        <a href="/" class="footer-link">CONTACT</a>
-        <a href="/" class="footer-link">CART</a>
-      </div>
     </div>
 
     <!-- Social Media Icons -->
@@ -169,10 +171,20 @@ const { isFixed = true } = Astro.props;
   .footer {
     background-color: #000;
     padding: 3rem 1.5rem;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
-    z-index: 10; /* z-index menor que content-wrapper pero mayor que banner */
+    z-index: 10;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .footer:not(.static-position) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+    }
   }
 
   .footer.static-position {
@@ -202,7 +214,15 @@ const { isFixed = true } = Astro.props;
   .footer-brand {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-brand {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 
   .footer-logo {
@@ -245,6 +265,33 @@ const { isFixed = true } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-links {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  .footer-links h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: system-ui, sans-serif;
+  }
+
+  .footer-links p {
+    color: #fff;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    font-family: system-ui, sans-serif;
   }
 
   .footer-link {
