@@ -54,8 +54,11 @@ const selectedEbook = ebooks.find((e) => e.id == idToUse) || ebooks[0]; // Defau
                     <div class="product-image-wrapper">
                         <img
                             src={selectedEbook.image}
-                            alt={selectedEbook.title}
+                            alt={`Portada del E-book ${selectedEbook.title}`}
                             class="product-image"
+                            width="400"
+                            height="600"
+                            loading="eager"
                         />
                     </div>
                     <div class="product-details">

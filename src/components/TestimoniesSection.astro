@@ -87,7 +87,13 @@ const videoTestimonials = [
   <!-- Intro -->
   <div class="empower-intro">
     <div class="logo">
-      <img src="/images/logito.webp" alt="Empower" />
+      <img
+        src="/images/logito.webp"
+        alt="Logo Julián Rpo Trainer"
+        width="90"
+        height="90"
+        loading="lazy"
+      />
     </div>
     <h2>
       ESTE PROGRAMA ESTÁ ABIERTO A HOMBRES Y MUJERES<br />DE TODAS LAS EDADES Y
@@ -112,8 +118,10 @@ const videoTestimonials = [
             <div class="image-wrapper">
               <img
                 src={item.image}
-                alt={`Testimonio ${item.id}`}
+                alt={`Testimonio de cliente ${item.id}`}
                 loading="lazy"
+                width="300"
+                height="400"
               />
               <div class="overlay">
                 <p class="overlay-comment">"{item.comment}"</p>
@@ -135,10 +143,11 @@ const videoTestimonials = [
             <div class="video-wrapper">
               <iframe
                 src={`https://www.youtube.com/embed/${item.id}`}
-                title="YouTube video player"
+                title={`Video testimonio del cliente ${item.id}`}
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
+                loading="lazy"
               />
             </div>
             <div class="video-overlay-static">

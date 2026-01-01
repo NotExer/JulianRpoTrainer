@@ -11,7 +11,13 @@ const { isFixed = true } = Astro.props;
       <div class="footer-brand">
         <div class="footer-logo">
           <a href="/" class="logo">
-            <img src="../../images/logito.webp" alt="Logo" />
+            <img
+              src="../../images/logito.webp"
+              alt="Logo Julián Rpo Trainer"
+              width="60"
+              height="60"
+              loading="lazy"
+            />
           </a>
         </div>
         <span class="brand-name">JULIAN RPO TRAINER</span>
@@ -125,9 +131,9 @@ const { isFixed = true } = Astro.props;
   </div>
 </footer>
 
-<script type="text/javascript">
+<script>
   const scrollToTopBtn = document.getElementById("scrollToTop");
-  const footer = document.querySelector(".footer");
+  const footer = document.querySelector(".footer") as HTMLElement | null;
 
   // Scroll suave al hacer clic
   scrollToTopBtn?.addEventListener("click", () => {
@@ -137,11 +143,21 @@ const { isFixed = true } = Astro.props;
     });
   });
 
-  // Función para actualizar z-index del footer según el scroll
+  let ticking = false;
+  let documentHeight = document.documentElement.scrollHeight;
+
+  // Actualizar altura del documento al cambiar el tamaño de ventana
+  window.addEventListener(
+    "resize",
+    () => {
+      documentHeight = document.documentElement.scrollHeight;
+    },
+    { passive: true },
+  );
+
   function updateFooterZIndex() {
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
     const scrollPercentage =
       (scrollPosition / (documentHeight - windowHeight)) * 100;
 
@@ -158,10 +174,21 @@ const { isFixed = true } = Astro.props;
     } else {
       scrollToTopBtn?.classList.remove("visible");
     }
+
+    ticking = false;
   }
 
-  // Escuchar el evento de scroll
-  window.addEventListener("scroll", updateFooterZIndex);
+  // Escuchar el evento de scroll con requestAnimationFrame
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateFooterZIndex);
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
 
   // Ejecutar al cargar la página
   updateFooterZIndex();
@@ -195,7 +222,6 @@ const { isFixed = true } = Astro.props;
   .footer-container {
     max-width: 1280px;
     margin: 0px auto;
- 
   }
 
   /* Grid Layout */

@@ -5,7 +5,14 @@
 <nav class="navbar">
   <div class="container">
     <a href="/" class="logo">
-      <img src="../../images/logito.webp" alt="Logo" />
+      <img
+        src="../../images/logito.webp"
+        alt="Logo Julian Rpo Trainer"
+        width="60"
+        height="60"
+        loading="eager"
+        fetchpriority="high"
+      />
     </a>
 
     <button class="menu-toggle" aria-label="Toggle menu">
@@ -183,7 +190,7 @@
   }
 </style>
 
-<script is:inline>
+<script>
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
 
@@ -202,7 +209,8 @@
 
   // Cerrar menú al hacer clic fuera
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".navbar")) {
+    const target = e.target as HTMLElement;
+    if (target && !target.closest(".navbar")) {
       menuToggle?.classList.remove("active");
       navMenu?.classList.remove("active");
     }

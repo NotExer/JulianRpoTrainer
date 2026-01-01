@@ -44,8 +44,11 @@ const ebooks = [
                         <div class="ebook-image-wrapper">
                             <img
                                 src={ebook.image}
-                                alt={ebook.title}
+                                alt={`Portada del E-book ${ebook.title}`}
                                 class="ebook-image"
+                                width="400"
+                                height="600"
+                                loading="lazy"
                             />
                             <div class="ebook-overlay" />
                         </div>
