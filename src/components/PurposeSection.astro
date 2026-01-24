@@ -2,177 +2,75 @@
 
 ---
 
-<section class="purpose-bio">
-    <div class="bio-container">
-        <div class="content-column">
-            <h2 class="title">MI PROPÓSITO</h2>
-
-            <h3 class="subtitle">
-                Mi propósito es acompañarte a reconectar con tu cuerpo y con tu
-                disciplina.
+<section
+    class="relative w-full bg-black py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+    <div
+        class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center"
+    >
+        <!-- Content Card -->
+        <div
+            class="w-full lg:w-1/2 p-10 md:p-14 rounded-[3rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-3xl"
+        >
+            <h2
+                class="text-[#aba070] font-bold tracking-widest text-sm mb-4 uppercase"
+            >
+                MI PROPÓSITO
+            </h2>
+            <h3
+                class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tighter uppercase"
+            >
+                RECONECTAR CON TU CUERPO Y TU DISCIPLINA
             </h3>
-            <p class="description">
-                Porque sé que el cambio no viene de un día perfecto, sino de la
-                constancia cuando nadie te ve.
-            </p>
-            <p class="description">
-                Entrenar no es solo mover pesas o contar calorías; es construir
-                una identidad nueva: una que cumple lo que promete y no se rinde
-                cuando la motivación baja.
-            </p>
-            <p class="description">
-                Mi trabajo es darte estructura, dirección y una guía que te
-                enseñe a avanzar con criterio, sin caos, sin adivinanzas.
-            </p>
-            <p class="description">
-                No vendo atajos, vendo claridad. Y con claridad, todo cambia. Si
-                decides trabajar conmigo, no solo vas a entrenar vas a
-                evolucionar.
-            </p>
+
+            <div
+                class="space-y-6 text-gray-300 text-lg font-light leading-relaxed"
+            >
+                <p>
+                    Porque sé que el cambio no viene de un día perfecto, sino de
+                    la constancia cuando nadie te ve.
+                </p>
+                <p>
+                    Entrenar no es solo mover pesas o contar calorías; es
+                    construir una identidad nueva: una que cumple lo que promete
+                    y no se rinde cuando la motivación baja.
+                </p>
+                <p>
+                    Mi trabajo es darte estructura, dirección y una guía que te
+                    enseñe a avanzar con criterio, sin caos, sin adivinanzas.
+                </p>
+                <div class="pt-8 border-t border-[#aba070]/30">
+                    <p class="text-white font-medium italic">
+                        No vendo atajos, vendo claridad. Y con claridad, todo
+                        cambia. Si decides trabajar conmigo, no solo vas a
+                        entrenar vas a evolucionar.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <div class="image-column">
-            <img
-                src="/images/6.webp"
-                alt="Propósito de Julián Restrepo - Entrenamiento Personal"
-                width="800"
-                height="600"
-                loading="lazy"
-            />
-            <div class="overlay"></div>
+        <!-- Image Card -->
+        <div class="w-full lg:w-1/2 relative group">
+            <div
+                class="absolute -inset-4 bg-[#aba070]/10 blur-[100px] rounded-full"
+            >
+            </div>
+            <div
+                class="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-3xl transition-transform duration-700 hover:scale-[1.02]"
+            >
+                <img
+                    src="/images/6.webp"
+                    alt="Propósito de Julián Restrepo"
+                    class="w-full h-full object-cover brightness-75 group-hover:brightness-100 transition-all duration-700"
+                    loading="lazy"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                >
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<style>
-    .purpose-bio {
-        background-color: #000;
-        color: #fff;
-        width: 100%;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .bio-container {
-        display: flex;
-        flex-direction: row;
-        min-height: 500px;
-        width: 100%;
-    }
-
-    .image-column {
-        flex: 1;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .image-column img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        filter: grayscale(20%);
-        transition: all 0.2s ease-in-out;
-    }
-
-    .image-column img:hover {
-        scale: 1.05;
-    }
-
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.4) 100%
-        );
-        pointer-events: none;
-    }
-
-    .content-column {
-        flex: 1;
-        background-color: #000;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; /* Center align items */
-    }
-
-    .title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 5px;
-        padding: 0 60px;
-        line-height: 1.2;
-        letter-spacing: 0.5px;
-        text-align: left; /* Start aligned */
-        width: 100%;
-        max-width: 550px; /* Match description width */
-    }
-
-    .subtitle {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #fff;
-        line-height: 1.4;
-        padding: 0 60px;
-        opacity: 0.9;
-        margin: 0 0 25px 0;
-        text-align: left; /* Start aligned */
-        width: 100%;
-        max-width: 550px; /* Match description width */
-    }
-
-    .description {
-        font-size: 0.85rem; /* Small but legible */
-        line-height: 1.8; /* Generous spacing */
-        color: #d1d1d1; /* Soft white */
-        margin-bottom: 20px;
-        padding: 0 60px;
-        max-width: 550px;
-        font-weight: 400;
-        letter-spacing: 0.2px;
-        text-align: start; /* Center text, not justified */
-    }
-
-    @media (max-width: 968px) {
-        .bio-container {
-            flex-direction: column-reverse; /* Image Top, Text Bottom */
-        }
-
-        .image-column {
-            height: 400px;
-            flex: none;
-            width: 100%;
-        }
-
-        .content-column {
-            padding: 50px 20px;
-            align-items: center;
-            text-align: center;
-        }
-
-        .title,
-        .subtitle,
-        .description {
-            padding: 0;
-            text-align: center; /* Center on mobile to match responsive design */
-        }
-
-        .title {
-            font-size: 1.4rem;
-        }
-
-        .description {
-            font-size: 0.9rem;
-            text-align: start; /* Center on mobile to match responsive design */
-        }
-    }
-</style>
+<style></style>

@@ -2,213 +2,127 @@
 // components/MethodologyPillars.astro
 ---
 
-<section class="methodology-pillars">
-    <div class="pillars-container">
-        <h2 class="section-title">LOS 3 PILARES</h2>
+<section
+    class="relative w-full bg-black py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <h2
+                class="text-4xl md:text-6xl font-black text-white mb-2 uppercase tracking-tighter"
+            >
+                LOS 3 PILARES
+            </h2>
+            <p
+                class="text-[#aba070] text-sm md:text-lg font-bold tracking-[0.3em] uppercase"
+            >
+                BASE DE TU TRANSFORMACIÓN
+            </p>
+        </div>
 
-        <div class="pillars-grid">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Pilar 1 -->
-            <div class="pillar-card">
-                <div class="pillar-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
+            <div
+                class="group relative p-12 rounded-[3rem] bg-white/5 backdrop-blur-3xl border border-white/10 shadow-3xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10 hover:border-[#aba070]/50 text-center"
+            >
+                <div
+                    class="w-20 h-20 mx-auto mb-8 text-[#aba070] transform transition-transform group-hover:scale-110 group-hover:rotate-12 duration-500"
+                >
+                    <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        class="w-full h-full"
+                        ><path
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            stroke-width="2"
+                            stroke-width="1.5"
                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
+                        ></path></svg
+                    >
                 </div>
-                <h3 class="pillar-title">ENTRENAMIENTO INTELIGENTE</h3>
-                <p class="pillar-description">
-                    Cada ejercicio tiene un propósito. Trabajamos con
-                    periodización, progresión controlada y técnica impecable
-                    para maximizar resultados y minimizar riesgos.
+                <h3
+                    class="text-xl font-black text-white mb-6 tracking-widest uppercase"
+                >
+                    ENTRENAMIENTO
+                </h3>
+                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                    Periodización y técnica impecable para maximizar resultados
+                    y minimizar riesgos. Cada serie tiene un porqué.
                 </p>
             </div>
 
             <!-- Pilar 2 -->
-            <div class="pillar-card">
-                <div class="pillar-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
+            <div
+                class="group relative p-12 rounded-[3rem] bg-white/5 backdrop-blur-3xl border border-white/10 shadow-3xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10 hover:border-[#aba070]/50 text-center"
+            >
+                <div
+                    class="w-20 h-20 mx-auto mb-8 text-[#aba070] transform transition-transform group-hover:scale-110 -group-hover:rotate-12 duration-500"
+                >
+                    <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        class="w-full h-full"
+                        ><path
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            stroke-width="2"
+                            stroke-width="1.5"
                             d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                        ></path>
-                    </svg>
+                        ></path></svg
+                    >
                 </div>
-                <h3 class="pillar-title">NUTRICIÓN ESTRATÉGICA</h3>
-                <p class="pillar-description">
-                    No se trata de dietas extremas, sino de aprender a comer
-                    según tus objetivos. Te enseño a crear hábitos alimenticios
-                    que funcionen para tu vida real.
+                <h3
+                    class="text-xl font-black text-white mb-6 tracking-widest uppercase"
+                >
+                    NUTRICIÓN
+                </h3>
+                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                    Aprende a comer según tus objetivos. Creamos hábitos
+                    sostenibles que funcionen para tu vida real.
                 </p>
             </div>
 
             <!-- Pilar 3 -->
-            <div class="pillar-card">
-                <div class="pillar-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
+            <div
+                class="group relative p-12 rounded-[3rem] bg-white/5 backdrop-blur-3xl border border-white/10 shadow-3xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10 hover:border-[#aba070]/50 text-center"
+            >
+                <div
+                    class="w-20 h-20 mx-auto mb-8 text-[#aba070] transform transition-transform group-hover:scale-110 group-hover:rotate-6 duration-500"
+                >
+                    <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        class="w-full h-full"
+                        ><path
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+                            stroke-width="1.5"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+                    >
                 </div>
-                <h3 class="pillar-title">MENTALIDAD Y DISCIPLINA</h3>
-                <p class="pillar-description">
-                    El físico cambia cuando la mente cambia. Trabajo contigo
-                    para desarrollar la disciplina, consistencia y mentalidad
-                    necesarias para sostener tu transformación.
+                <h3
+                    class="text-xl font-black text-white mb-6 tracking-widest uppercase"
+                >
+                    MENTALIDAD
+                </h3>
+                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                    El físico cambia cuando la mente cambia. Desarrollamos la
+                    disciplina necesaria para sostener tu éxito.
                 </p>
             </div>
         </div>
     </div>
+
+    <!-- Decorative Orbs -->
+    <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#aba070]/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"
+    >
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2"
+    >
+    </div>
 </section>
 
-<style>
-    .methodology-pillars {
-        position: relative;
-        width: 100%;
-        background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
-        padding: 80px 20px;
-        border-top: 1px solid rgba(211, 197, 136, 0.2);
-    }
-
-    .pillars-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #d3c588;
-        text-align: center;
-        margin-bottom: 60px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .pillars-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-    }
-
-    .pillar-card {
-        background: #111;
-        padding: 50px 35px;
-        border-radius: 8px;
-        border: 1px solid rgba(211, 197, 136, 0.15);
-        text-align: center;
-        transition: all 0.3s ease;
-        position: relative;
-    }
-
-    .pillar-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 8px;
-        padding: 1px;
-        background: linear-gradient(135deg, #d3c588, transparent);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .pillar-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(211, 197, 136, 0.15);
-    }
-
-    .pillar-card:hover::before {
-        opacity: 1;
-    }
-
-    .pillar-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 30px;
-        color: #d3c588;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .pillar-icon svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    .pillar-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 20px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .pillar-description {
-        font-size: 1rem;
-        font-weight: 300;
-        color: #e0e0e0;
-        line-height: 1.8;
-        margin: 0;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    @media (max-width: 768px) {
-        .methodology-pillars {
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        .pillars-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .pillar-card {
-            padding: 40px 30px;
-        }
-
-        .pillar-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 25px;
-        }
-
-        .pillar-title {
-            font-size: 1.2rem;
-        }
-
-        .pillar-description {
-            font-size: 0.95rem;
-        }
-    }
-</style>
+<style></style>

@@ -6,77 +6,63 @@ interface Props {
 const { imageUrl, title = "" } = Astro.props;
 ---
 
-<div class="mi-banner">
-  <slot /> 
-  <h1>{title}</h1>
+<div
+  class="fixed top-0 left-0 min-h-[100vh] w-full flex flex-col justify-center items-center text-center z-[1] overflow-hidden bg-black"
+>
+  <div
+    class="absolute inset-0 z-[1] bg-cover bg-center bg-no-repeat brightness-[0.35] scale-110 blur-[2px]"
+    style={`background-image: ${imageUrl};`}
+  >
+  </div>
+
+  <!-- Overlay Gradients -->
+  <div
+    class="absolute inset-0 z-[2] bg-gradient-to-b from-black/60 via-transparent to-black"
+  >
+  </div>
+  <div
+    class="absolute inset-0 z-[2] bg-gradient-to-r from-black/80 via-transparent to-black/80"
+  >
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-[3] px-6 max-w-6xl mx-auto">
+    <div
+      class="w-full h-px bg-gradient-to-r from-transparent via-[#aba070] to-transparent mb-12 opacity-50"
+    >
+    </div>
+
+    <h1
+      class="text-white font-black leading-[0.8] select-none
+               text-[clamp(2.5rem,12vw,11rem)] tracking-tighter uppercase
+               drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)] italic"
+    >
+      {title}
+    </h1>
+
+    <div class="mt-12 flex items-center justify-center gap-6">
+      <div class="w-12 h-px bg-[#aba070]/50"></div>
+      <p
+        class="text-[#aba070] font-black text-xs md:text-sm tracking-[0.5em] uppercase opacity-80"
+      >
+        Entrenamiento Premium Fitness
+      </p>
+      <div class="w-12 h-px bg-[#aba070]/50"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Transition -->
+  <div
+    class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black via-black/80 to-transparent z-[2]"
+  >
+  </div>
 </div>
 
-<style define:vars={{ imageUrl }}>
-
-h1 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    position: relative;
-    color: white;
-    font-size: 3rem; 
-    font-weight: 800;
-    max-width: 1200px;
-    line-height: 0.8;
-    z-index: 2;
-    margin: 0;
-    padding: 0 1rem;
-}
-
-/* Para pantallas medianas (ej. tablets) */
-@media (min-width: 768px) {
-    h1 {
-        font-size: 4rem; /* Tamaño intermedio */
-    }
-}
-
-/* Para pantallas grandes (ej. escritorios) */
-@media (min-width: 1200px) {
-    h1 {
-        font-size: 7rem; /* Tu tamaño original grande */
-    }
-}
-
-  .mi-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-height: 900px; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1;
-
-  }
-  
-  /* Imagen de fondo */
-  .mi-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: var(--imageUrl);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    z-index: 1;
-    filter: brightness(0.6);
-  }
-
-  /* Control de imagen en móviles */
+<style>
   @media (max-width: 768px) {
-    .mi-banner::before {
-      background-position: 75% 10%;
-      background-size: cover;
+    div[style*="background-image"] {
+      background-position: center !important;
+      scale: 1.2;
     }
   }
-
 </style>

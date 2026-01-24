@@ -2,149 +2,79 @@
 // components/MethodologyResult.astro
 ---
 
-<section class="methodology-result">
-    <div class="content-grid">
-        <!-- Contenido a la izquierda -->
-        <div class="text-content">
-            <h2 class="section-title">EL RESULTADO</h2>
+<section
+    class="relative w-full bg-black py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+    <div
+        class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center"
+    >
+        <!-- Content Card -->
+        <div
+            class="w-full lg:w-1/2 p-10 md:p-14 rounded-[3rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-3xl"
+        >
+            <h2
+                class="text-[#aba070] font-bold tracking-widest text-sm mb-4 uppercase italic"
+            >
+                EL OBJETIVO
+            </h2>
+            <h3
+                class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight tracking-tighter uppercase"
+            >
+                EL RESULTADO FINAL
+            </h3>
 
-            <div class="text-wrapper">
-                <p class="result-text">
-                    El resultado del método De Cero a Fitness® es simple de
-                    explicar y potente de vivir:
+            <div
+                class="space-y-6 text-gray-300 text-lg font-light leading-relaxed"
+            >
+                <p>
+                    El resultado del método <span class="text-white font-bold"
+                        >De Cero a Fitness®</span
+                    > es simple de explicar y potente de vivir:
                 </p>
-                <p class="result-statement">
-                    Pasas de ser alguien que "no sabe por dónde empezar" a ser
-                    una persona que entrena con seguridad, come con criterio, se
-                    ve mejor, se siente mejor y puede decir con tranquilidad:
-                    <span class="highlight-quote"
-                        >"hoy sí llevo una vida fitness y saludable que es mía y
-                        puedo mantenerla"</span
+
+                <div
+                    class="p-8 bg-[#aba070]/10 rounded-3xl border border-[#aba070]/20"
+                >
+                    <p
+                        class="text-white font-medium italic text-xl leading-relaxed"
                     >
-                </p>
+                        "Pasas de no saber por dónde empezar a ser una persona
+                        que entrena con seguridad, come con criterio y domina su
+                        propio progreso."
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-[#aba070]/30">
+                        <p
+                            class="text-[#aba070] font-black text-sm tracking-widest uppercase"
+                        >
+                            UNA VIDA FITNESS QUE ES TUYA PARA SIEMPRE.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Imagen a la derecha -->
-        <div class="result-image">
-            <img
-                src="/images/7.webp"
-                alt="Resultados del método De Cero a Fitness - Julián Restrepo"
-                width="800"
-                height="600"
-                loading="lazy"
-            />
+        <!-- Image Card -->
+        <div class="w-full lg:w-1/2 relative group">
+            <div
+                class="absolute -inset-4 bg-orange-500/10 blur-[100px] rounded-full opacity-50"
+            >
+            </div>
+            <div
+                class="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-3xl transform transition-transform duration-700 hover:scale-[1.02]"
+            >
+                <img
+                    src="/images/7.webp"
+                    alt="Resultados del método De Cero a Fitness"
+                    class="w-full h-full object-cover brightness-90 group-hover:brightness-100 transition-all duration-700"
+                    loading="lazy"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                >
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<style>
-    .methodology-result {
-        position: relative;
-        width: 100%;
-        background: #000;
-        z-index: 100;
-    }
-
-    .content-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        min-height: 400px;
-    }
-
-    /* Imagen */
-    .result-image {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: #111;
-    }
-
-    .result-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .result-image:hover img {
-        scale: 1.05;
-    }
-
-    /* Contenido */
-    .text-content {
-        background-color: #000;
-        padding: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #d3c588;
-        margin: 0 0 20px 0;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-    }
-
-    .result-text {
-        font-size: 16px;
-        font-weight: 400;
-        color: #e0e0e0;
-        line-height: 1.8;
-        margin: 0 0 20px 0;
-    }
-
-    .result-statement {
-        font-size: 16px;
-        font-weight: 300;
-        color: #fff;
-        line-height: 1.8;
-        margin: 0;
-        background: #111;
-        padding: 30px;
-        border-radius: 8px;
-        border: 1px solid rgba(211, 197, 136, 0.2);
-    }
-
-    .highlight-quote {
-        display: block;
-        margin-top: 15px;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #d3c588;
-        font-style: italic;
-        padding-top: 15px;
-        border-top: 1px solid rgba(211, 197, 136, 0.3);
-    }
-
-    @media (max-width: 768px) {
-        .content-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .result-image {
-            height: 300px;
-        }
-
-        .text-content {
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-    }
-</style>
+<style></style>

@@ -2,241 +2,80 @@
 // components/AboutSection.astro
 ---
 
-<section class="about-section">
-  <!-- Grid superior de 3 tarjetas con imágenes -->
-  <div class="info-cards-grid">
-    <div class="info-card">
-      <div class="card-image" style="background-image: url('/images/3.webp')">
-        <div class="card-overlay">
-          <h3>TIENES DUDAS?</h3>
+<section
+  class="relative w-full bg-black py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Card 1 -->
+      <div
+        class="group relative aspect-[16/9] md:aspect-auto md:h-[500px] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-700 hover:scale-[1.02]"
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+          style="background-image: url('/images/3.webp')"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+        >
+        </div>
+        <div
+          class="absolute inset-x-0 bottom-0 p-10 md:p-14 text-center md:text-left"
+        >
+          <h3
+            class="text-3xl md:text-4xl font-black text-white mb-6 uppercase tracking-tighter drop-shadow-lg"
+          >
+            TIENES DUDAS?
+          </h3>
           <a
             href="https://calendly.com/julianrpotrainer/resolviendo-dudas-de-entrenamiento-y-nutricion?month=2025-12"
             target="_blank"
-            class="download-btn">PEDIR ASESORIA</a
+            class="inline-block px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black text-xs tracking-widest uppercase rounded-2xl hover:bg-white hover:text-black transition-all duration-300 shadow-xl"
           >
+            PEDIR ASESORIA
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="info-card">
-      <div class="card-image" style="background-image: url('/images/5.webp')">
-        <div class="card-overlay">
-          <h3>ENFÓCATE EN TUS OBJETIVOS</h3>
+      <!-- Card 2 -->
+      <div
+        class="group relative aspect-[16/9] md:aspect-auto md:h-[500px] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-700 hover:scale-[1.02]"
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+          style="background-image: url('/images/5.webp')"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+        >
+        </div>
+        <div
+          class="absolute inset-x-0 bottom-0 p-10 md:p-14 text-center md:text-left"
+        >
+          <h3
+            class="text-3xl md:text-4xl font-black text-white mb-6 uppercase tracking-tighter drop-shadow-lg"
+          >
+            ENFÓCATE EN TUS OBJETIVOS
+          </h3>
           <a
             href="https://api.whatsapp.com/send?phone=573017821333&text=Hola%20Julián%2C%20Me%20gustaría%20conocer%20mas%20sobre%20tus%20servicios.%20mi%20nombre%20es%20%0A%20%20"
             target="_blank"
-            class="download-btn">UNIRSE AL PROGRAMA</a
+            class="inline-block px-10 py-4 bg-[#aba070] text-white font-black text-xs tracking-widest uppercase rounded-2xl hover:bg-white hover:text-black transition-all duration-300 shadow-xl"
           >
+            UNIRSE AL PROGRAMA
+          </a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Decorative blur -->
+  <div
+    class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#aba070]/5 blur-[120px] rounded-full translate-y-1/2 pointer-events-none"
+  >
+  </div>
 </section>
 
-<style>
-  .about-section {
-    position: relative;
-    width: 100%;
-    background: #000;
-    z-index: 100;
-  }
-
-  /* Grid superior de tarjetas */
-  .info-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-  }
-
-  .info-card {
-    position: relative;
-    height: 400px;
-    overflow: hidden;
-  }
-
-  .card-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    background-color: #111;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .card-image:hover {
-    scale: 1.02;
-  }
-
-  .card-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 40px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    color: #fff;
-  }
-
-  .card-overlay h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
-  }
-
-  .card-overlay p {
-    color: #fff;
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 0;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-  }
-
-  .download-btn {
-    display: inline-block;
-    text-decoration: none;
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 12px 24px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
-  }
-
-  .download-btn:hover {
-    background: #fff;
-    color: #000;
-  }
-
-  /* Grid de contenido (texto + video) */
-  .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-
-  .text-content {
-    background-color: #000;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
-  }
-
-  .text-content p {
-    color: #fff;
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 0;
-  }
-
-  .video-content {
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .video-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .play-button {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .play-button:hover {
-    transform: scale(1.1);
-  }
-
-  /* Grid inferior de logros */
-  .achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-  }
-
-  .achievement-item {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .achievement-item:hover {
-    transform: scale(1.05);
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .info-cards-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .achievements-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .info-cards-grid,
-    .content-grid,
-    .achievements-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .info-card {
-      height: 300px;
-    }
-
-    .text-content {
-      padding: 40px 20px;
-    }
-
-    .achievements-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .achievement-item {
-      height: 200px;
-    }
-  }
-</style>
+<style></style>

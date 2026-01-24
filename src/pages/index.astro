@@ -8,6 +8,7 @@ import SmoothScroll from "../components/SmoothScroll.astro";
 import MotivationSection from "../components/MotivationSection.astro";
 import IntroPart1 from "../components/IntroPart1.astro";
 import IntroPart2 from "../components/IntroPart2.astro";
+import "../styles/global.css";
 ---
 
 <html lang="es">
@@ -22,7 +23,8 @@ import IntroPart2 from "../components/IntroPart2.astro";
       content="Transforma tu vida con Julián Restrepo. Entrenamiento personal y nutrición personalizada basada en ciencia para hombres y mujeres. Resultados reales y duraderos."
     />
   </head>
-  <body style="margin:0; background:#111;">
+  <body>
+
     <Navbar />
 
     <BackgroundImage
@@ -61,7 +63,7 @@ import IntroPart2 from "../components/IntroPart2.astro";
   }
 
   .scroll-spacer {
-    height: 900px; /* Altura inicial que coincide con min-height del banner */
+    height: 100vh;
     pointer-events: none;
   }
 

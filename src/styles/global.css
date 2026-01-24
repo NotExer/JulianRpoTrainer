@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Añade aquí estilos base personalizados si lo necesitas */
+html,
+body {
+  background-color: #111;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Test Tailwind processing */
+.tailwind-test {
+  @apply bg-blue-600 p-4 text-center font-bold;
+}

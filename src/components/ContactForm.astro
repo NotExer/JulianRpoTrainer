@@ -2,329 +2,248 @@
 
 ---
 
-<section class="contact-form-section">
-    <div class="container">
-        <div class="form-wrapper">
-            <h2>CONTÁCTAME</h2>
-            <p>ESTOY AQUÍ PARA AYUDARTE A LOGRAR TUS METAS</p>
+<section
+    class="relative w-full bg-black py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+    <div class="max-w-4xl mx-auto relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h2
+                class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter uppercase"
+            >
+                CONTÁCTAME
+            </h2>
+            <p
+                class="text-[#aba070] text-lg font-light tracking-widest uppercase"
+            >
+                ESTOY AQUÍ PARA AYUDARTE A LOGRAR TUS METAS
+            </p>
+        </div>
 
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">NOMBRE COMPLETO</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        placeholder="Tu nombre completo"
-                    />
-                </div>
-
-                <div class="form-group">
-                    <label for="age">EDAD</label>
-                    <input
-                        type="number"
-                        id="age"
-                        name="age"
-                        required
-                        placeholder="Tu edad"
-                    />
-                </div>
-
-                <div class="form-group">
-                    <label for="goal">OBJETIVO PRINCIPAL</label>
-                    <select id="goal" name="goal" required>
-                        <option value="" disabled selected
-                            >Selecciona tu objetivo</option
+        <!-- Glass Form Card -->
+        <div
+            class="p-8 md:p-16 rounded-[3rem] bg-white/5 backdrop-blur-3xl border border-white/10 shadow-3xl"
+        >
+            <form id="contactForm" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Name -->
+                    <div class="space-y-2">
+                        <label
+                            for="name"
+                            class="block text-xs font-bold text-[#aba070] tracking-widest uppercase ml-4"
+                            >NOMBRE COMPLETO</label
                         >
-                        <option value="Perdida de grasa"
-                            >Pérdida de grasa</option
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Escribe tu nombre"
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#aba070] focus:bg-white/10 transition-all placeholder:text-gray-600"
+                        />
+                    </div>
+
+                    <!-- Age -->
+                    <div class="space-y-2">
+                        <label
+                            for="age"
+                            class="block text-xs font-bold text-[#aba070] tracking-widest uppercase ml-4"
+                            >EDAD</label
                         >
-                        <option value="Ganancia muscular"
-                            >Ganancia muscular</option
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            required
+                            placeholder="Tu edad"
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#aba070] focus:bg-white/10 transition-all placeholder:text-gray-600"
+                        />
+                    </div>
+
+                    <!-- Goal -->
+                    <div class="space-y-2">
+                        <label
+                            for="goal"
+                            class="block text-xs font-bold text-[#aba070] tracking-widest uppercase ml-4"
+                            >OBJETIVO PRINCIPAL</label
                         >
-                        <option value="Resistencia">Resistencia</option>
-                        <option value="Salud general">Salud general</option>
-                        <option value="Otro">Otro</option>
-                    </select>
+                        <select
+                            id="goal"
+                            name="goal"
+                            required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#aba070] focus:bg-white/10 transition-all appearance-none cursor-pointer"
+                        >
+                            <option
+                                value=""
+                                disabled
+                                selected
+                                class="bg-black text-gray-400"
+                                >Selecciona tu objetivo</option
+                            >
+                            <option value="Perdida de grasa" class="bg-black"
+                                >Pérdida de grasa</option
+                            >
+                            <option value="Ganancia muscular" class="bg-black"
+                                >Ganancia muscular</option
+                            >
+                            <option value="Resistencia" class="bg-black"
+                                >Resistencia</option
+                            >
+                            <option value="Salud general" class="bg-black"
+                                >Salud general</option
+                            >
+                            <option value="Otro" class="bg-black">Otro</option>
+                        </select>
+                    </div>
+
+                    <!-- Level -->
+                    <div class="space-y-2">
+                        <label
+                            for="level_city"
+                            class="block text-xs font-bold text-[#aba070] tracking-widest uppercase ml-4"
+                            >NIVEL ACTUAL</label
+                        >
+                        <input
+                            type="text"
+                            id="level_city"
+                            name="level_city"
+                            required
+                            placeholder="Ej: Principiante"
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#aba070] focus:bg-white/10 transition-all placeholder:text-gray-600"
+                        />
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="level_city">NIVEL ACTUAL </label>
-                    <input
-                        type="text"
-                        id="level_city"
-                        name="level_city"
-                        required
-                        placeholder="Ej: Principiante"
-                    />
-                </div>
-
-                <div class="form-group">
-                    <label for="whatsapp">WHATSAPP</label>
+                <!-- WhatsApp -->
+                <div class="space-y-2">
+                    <label
+                        for="whatsapp"
+                        class="block text-xs font-bold text-[#aba070] tracking-widest uppercase ml-4"
+                        >WHATSAPP</label
+                    >
                     <input
                         type="tel"
                         id="whatsapp"
                         name="whatsapp"
                         required
-                        placeholder="+57 300 123 4567"
+                        placeholder="+57 301 7821333"
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#aba070] focus:bg-white/10 transition-all placeholder:text-gray-600"
                     />
                 </div>
 
-                <div class="form-group">
-                    <label for="message">COMENTARIO OPCIONAL</label>
+                <!-- Message -->
+                <div class="space-y-2">
+                    <label
+                        for="message"
+                        class="block text-xs font-bold text-[#aba070] tracking-widest uppercase ml-4"
+                        >COMENTARIO OPCIONAL</label
+                    >
                     <textarea
                         id="message"
                         name="message"
-                        rows="5"
-                        placeholder="Cuéntame más detalles opcionales..."
+                        rows="4"
+                        placeholder="Cuéntame más sobre tu proceso..."
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#aba070] focus:bg-white/10 transition-all placeholder:text-gray-600 resize-none"
                     ></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn"
-                    >SOLICITAR ASESORÍA PERSONALIZADA</button
+                <!-- Submit Button -->
+                <div class="pt-6">
+                    <button
+                        type="submit"
+                        class="submit-btn w-full bg-white text-black font-black py-5 rounded-2xl tracking-[0.2em] uppercase hover:bg-[#aba070] hover:text-white transition-all duration-300 shadow-xl active:scale-95"
+                    >
+                        SOLICITAR ASESORÍA PERSONALIZADA
+                    </button>
+                </div>
+
+                <div
+                    id="formStatus"
+                    class="mt-6 text-center text-sm font-bold tracking-widest uppercase"
                 >
-
-                <div id="formStatus" class="form-status"></div>
-                <script>
-                    const form = document.getElementById("contactForm");
-                    const statusDiv = document.getElementById("formStatus");
-
-                    if (form && statusDiv) {
-                        form.addEventListener("submit", async (e) => {
-                            e.preventDefault();
-
-                            const submitBtn = form.querySelector(
-                                ".submit-btn",
-                            ) as HTMLButtonElement;
-                            const originalBtnText = submitBtn.innerText;
-
-                            submitBtn.disabled = true;
-                            submitBtn.innerText = "ENVIANDO...";
-                            statusDiv.className = "form-status";
-                            statusDiv.style.display = "none";
-
-                            const formData = new FormData(
-                                form as HTMLFormElement,
-                            );
-                            const data = Object.fromEntries(formData.entries());
-
-                            try {
-                                const response = await fetch("/send-mail.php", {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/json",
-                                    },
-                                    body: JSON.stringify(data),
-                                });
-
-                                const text = await response.text();
-                                let result;
-
-                                try {
-                                    result = JSON.parse(text);
-                                } catch (e) {
-                                    // Si falla el parseo y vemos código PHP, es porque estamos en dev
-                                    if (text.includes("<?php")) {
-                                        throw new Error(
-                                            "Estás en modo desarrollo (npm run dev). Astro no ejecuta PHP. Debes probar esto en un servidor PHP o desplegar el proyecto.",
-                                        );
-                                    }
-                                    throw new Error(
-                                        "Respuesta inválida del servidor.",
-                                    );
-                                }
-
-                                if (response.ok) {
-                                    statusDiv.innerText =
-                                        result.message ||
-                                        "Mensaje enviado con éxito.";
-                                    statusDiv.classList.add("success");
-                                    (form as HTMLFormElement).reset();
-                                } else {
-                                    throw new Error(
-                                        result.message ||
-                                            "Error al enviar el mensaje.",
-                                    );
-                                }
-                            } catch (error) {
-                                statusDiv.innerText =
-                                    error instanceof Error
-                                        ? error.message
-                                        : "Ocurrió un error inesperado.";
-                                statusDiv.classList.add("error");
-                            } finally {
-                                statusDiv.style.display = "block";
-                                submitBtn.disabled = false;
-                                submitBtn.innerText = originalBtnText;
-                            }
-                        });
-                    }
-                </script>
-
-                <style>
-                    .contact-form-section {
-                        padding: 80px 20px;
-                        background-color: #000;
-                        color: #fff;
-                        display: flex;
-                        justify-content: center;
-                        font-family:
-                            system-ui,
-                            -apple-system,
-                            sans-serif;
-                        box-sizing: border-box;
-                    }
-
-                    .contact-form-section * {
-                        box-sizing: border-box;
-                    }
-
-                    .container {
-                        max-width: 800px;
-                        width: 100%;
-                    }
-
-                    .form-wrapper {
-                        background: #111;
-                        padding: 40px;
-                        border: 1px solid #222;
-                        border-radius: 12px;
-                        width: 100%;
-                        transition: all 0.3s ease;
-                    }
-
-                    .form-wrapper:hover {
-                        border-color: #333;
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                    }
-
-                    h2 {
-                        font-size: 3rem;
-                        font-weight: 900;
-                        margin-bottom: 10px;
-                        text-align: center;
-                        letter-spacing: 2px;
-                        color: #fff;
-                        text-transform: uppercase;
-                    }
-
-                    p {
-                        text-align: center;
-                        color: #888;
-                        margin-bottom: 40px;
-                        font-size: 1.2rem;
-                        font-weight: 300;
-                    }
-
-                    .form-group {
-                        margin-bottom: 25px;
-                    }
-
-                    label {
-                        display: block;
-                        margin-bottom: 8px;
-                        font-size: 0.9rem;
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                        color: #fff;
-                        text-transform: uppercase;
-                    }
-
-                    input,
-                    select,
-                    textarea {
-                        width: 100%;
-                        padding: 15px;
-                        background: #000;
-                        border: 1px solid #333;
-                        color: #fff;
-                        font-family: inherit;
-                        font-size: 1rem;
-                        transition: all 0.3s ease;
-                        border-radius: 4px;
-                    }
-
-                    input:focus,
-                    select:focus,
-                    textarea:focus {
-                        outline: none;
-                        border-color: #d3c588;
-                        box-shadow: 0 0 10px rgba(211, 197, 136, 0.1);
-                    }
-
-                    select option {
-                        background: #000;
-                        color: #fff;
-                    }
-
-                    .submit-btn {
-                        width: 100%;
-                        padding: 15px;
-                        background: #d3c588;
-                        color: #000;
-                        border: none;
-                        font-size: 1rem;
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                        text-transform: uppercase;
-                        margin-top: 10px;
-                        border-radius: 4px;
-                    }
-
-                    .submit-btn:hover:not(:disabled) {
-                        background: #fff;
-                        transform: translateY(-2px);
-                    }
-
-                    .submit-btn:disabled {
-                        opacity: 0.7;
-                        cursor: not-allowed;
-                        background: #888;
-                    }
-
-                    .form-status {
-                        margin-top: 20px;
-                        padding: 15px;
-                        text-align: center;
-                        display: none;
-                        font-size: 14px;
-                        border-radius: 4px;
-                    }
-
-                    .form-status.success {
-                        background: rgba(211, 197, 136, 0.1);
-                        border: 1px solid #d3c588;
-                        color: #d3c588;
-                    }
-
-                    .form-status.error {
-                        background: rgba(255, 0, 0, 0.1);
-                        border: 1px solid #ff0000;
-                        color: #ff0000;
-                    }
-
-                    @media (max-width: 768px) {
-                        .contact-form-section {
-                            padding: 40px 20px;
-                        }
-
-                        .form-wrapper {
-                            padding: 25px;
-                        }
-
-                        h2 {
-                            font-size: 2rem;
-                        }
-
-                        p {
-                            font-size: 1rem;
-                        }
-                    }
-                </style>
+                </div>
             </form>
         </div>
     </div>
+
+    <!-- Background highlights -->
+    <div
+        class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#aba070]/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"
+    >
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-orange-500/5 blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"
+    >
+    </div>
 </section>
+
+<style>
+    .form-status.success {
+        color: #aba070;
+    }
+    .form-status.error {
+        color: #ef4444;
+    }
+</style>
+
+<script>
+    const form = document.getElementById("contactForm");
+    const statusDiv = document.getElementById("formStatus");
+
+    if (form && statusDiv) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector(
+                ".submit-btn",
+            ) as HTMLButtonElement;
+            const originalBtnText = submitBtn.innerText;
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "ENVIANDO...";
+            statusDiv.className =
+                "mt-6 text-center text-sm font-bold tracking-widest uppercase";
+            statusDiv.innerHTML = "";
+
+            const formData = new FormData(form as HTMLFormElement);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("/send-mail.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+
+                const text = await response.text();
+                let result;
+
+                try {
+                    result = JSON.parse(text);
+                } catch (e) {
+                    if (text.includes("<?php")) {
+                        throw new Error("SERVER ERROR: PHP NOT EXECUTED");
+                    }
+                    throw new Error("INVALID SERVER RESPONSE");
+                }
+
+                if (response.ok) {
+                    statusDiv.innerText =
+                        result.message || "¡MENSAJE ENVIADO CON ÉXITO!";
+                    statusDiv.classList.add("success");
+                    (form as HTMLFormElement).reset();
+                } else {
+                    throw new Error(result.message || "ERROR AL ENVIAR");
+                }
+            } catch (error) {
+                statusDiv.innerText =
+                    error instanceof Error
+                        ? error.message.toUpperCase()
+                        : "ERROR INESPERADO";
+                statusDiv.classList.add("error");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        });
+    }
+</script>

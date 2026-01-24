@@ -28,37 +28,52 @@ const ebooks = [
 ];
 ---
 
-<section class="ebooks-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">E-BOOKS EXCLUSIVOS</h2>
-            <p class="section-subtitle">
+<section
+    class="relative w-full bg-black py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <h2
+                class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase"
+            >
+                E-BOOKS EXCLUSIVOS
+            </h2>
+            <p class="text-[#aba070] text-lg font-light tracking-widest">
                 Obtén conocimiento de calidad sobre entrenamiento y nutrición
             </p>
         </div>
 
-        <div class="ebooks-grid">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             {
                 ebooks.map((ebook) => (
-                    <article class="ebook-card">
-                        <div class="ebook-image-wrapper">
+                    <article class="group relative flex flex-col rounded-[2.5rem] bg-white/5 backdrop-blur-2xl border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10">
+                        <div class="relative aspect-[3/4] overflow-hidden">
                             <img
                                 src={ebook.image}
                                 alt={`Portada del E-book ${ebook.title}`}
-                                class="ebook-image"
-                                width="400"
-                                height="600"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 loading="lazy"
                             />
-                            <div class="ebook-overlay" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <h3 class="text-2xl font-black text-white tracking-widest uppercase truncate drop-shadow-lg">
+                                    {ebook.title}
+                                </h3>
+                            </div>
                         </div>
 
-                        <div class="ebook-content">
-                            <h3 class="ebook-title">{ebook.title}</h3>
-                            <p class="ebook-description">{ebook.description}</p>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="text-gray-400 text-sm leading-relaxed font-light mb-8 flex-grow">
+                                {ebook.description}
+                            </p>
 
-                            <div class="ebook-footer">
-                                <a href="#" class="btn-buy" download>
+                            <div class="pt-6 border-t border-white/10">
+                                <a
+                                    href="#"
+                                    class="block w-full py-4 text-center bg-white text-black font-black text-xs tracking-widest uppercase rounded-2xl hover:bg-[#aba070] hover:text-white transition-all duration-300 shadow-xl"
+                                    download
+                                >
                                     DESCARGAR AHORA
                                 </a>
                             </div>
@@ -68,165 +83,12 @@ const ebooks = [
             }
         </div>
     </div>
+
+    <!-- Background highlights -->
+    <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#aba070]/5 blur-[150px] rounded-full pointer-events-none"
+    >
+    </div>
 </section>
 
-<style>
-    .ebooks-section {
-        background: #000;
-        position: relative;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 80px 20px;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        font-size: 3rem;
-        font-weight: 900;
-        color: #fff;
-        margin: 0 0 20px 0;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-
-    .section-subtitle {
-        font-size: 1.2rem;
-        color: #888;
-        margin: 0;
-        font-weight: 300;
-    }
-
-    .ebooks-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px;
-        margin-top: 40px;
-    }
-
-    .ebook-card {
-        background: #111;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid #222;
-    }
-
-    .ebook-card:hover {
-        transform: translateY(-10px);
-        border-color: #d3c588;
-        box-shadow: 0 20px 40px rgba(255, 223, 100, 0.2);
-    }
-
-    .ebook-image-wrapper {
-        position: relative;
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        background: #1a1a1a;
-    }
-
-    .ebook-image {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: contain;
-        transition: transform 0.5s ease;
-    }
-
-    .ebook-card:hover .ebook-image {
-        transform: scale(1.1);
-    }
-
-    .ebook-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.8) 0%,
-            transparent 50%
-        );
-        pointer-events: none;
-    }
-
-    .ebook-content {
-        padding: 30px;
-    }
-
-    .ebook-title {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: #fff;
-        margin: 0 0 15px 0;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    .ebook-description {
-        font-size: 0.95rem;
-        color: #999;
-        line-height: 1.6;
-        margin: 0 0 25px 0;
-        min-height: 80px;
-    }
-
-    .ebook-footer {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        padding-top: 20px;
-        border-top: 1px solid #222;
-    }
-
-    .ebook-price {
-        font-size: 1.8rem;
-        font-weight: 900;
-        color: #d3c588;
-        letter-spacing: 1px;
-        align-self: flex-start;
-    }
-
-    .btn-buy {
-        background: #d3c588;
-        color: #000;
-        border: none;
-        padding: 15px;
-        font-size: 1rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        border-radius: 4px;
-        width: 90%;
-        text-decoration: none;
-        display: block;
-        text-align: center;
-    }
-
-    .btn-buy:hover {
-        background: #fff;
-        transform: translateY(-2px);
-    }
-
-    @media (max-width: 768px) {
-        .section-title {
-            font-size: 2rem;
-        }
-        .ebooks-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
+<style></style>

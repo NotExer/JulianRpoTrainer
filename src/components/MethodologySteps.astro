@@ -2,188 +2,107 @@
 // components/MethodologySteps.astro
 ---
 
-<section class="methodology-steps">
-    <div class="steps-container">
-        <h2 class="section-title">EL PROCESO</h2>
+<section
+    class="relative w-full bg-black py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <h2
+                class="text-4xl md:text-6xl font-black text-white mb-2 uppercase tracking-tighter"
+            >
+                EL PROCESO
+            </h2>
+            <div class="w-24 h-1 bg-[#aba070] mx-auto rounded-full"></div>
+        </div>
 
-        <div class="steps-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Step 1 -->
-            <div class="step-card">
-                <div class="step-number">01</div>
-                <h3 class="step-title">EVALUACIÓN INICIAL</h3>
-                <p class="step-description">
+            <div
+                class="group relative p-10 rounded-[2.5rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+            >
+                <div
+                    class="absolute top-6 right-8 text-5xl font-black text-[#aba070]/10 group-hover:text-[#aba070]/20 transition-colors uppercase italic"
+                >
+                    01
+                </div>
+                <h3
+                    class="text-xl font-black text-white mt-8 mb-4 tracking-widest uppercase"
+                >
+                    EVALUACIÓN INICIAL
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
                     Analizamos tu punto de partida: composición corporal,
-                    historial de entrenamiento, objetivos y estilo de vida. Aquí
-                    entiendo quién eres y qué necesitas.
+                    historial de entrenamiento, objetivos y estilo de vida.
                 </p>
             </div>
 
             <!-- Step 2 -->
-            <div class="step-card">
-                <div class="step-number">02</div>
-                <h3 class="step-title">DISEÑO PERSONALIZADO</h3>
-                <p class="step-description">
-                    Creo un plan de entrenamiento y nutrición adaptado a ti. No
-                    hay plantillas genéricas, solo estrategias diseñadas para tu
-                    cuerpo y tu contexto.
+            <div
+                class="group relative p-10 rounded-[2.5rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+            >
+                <div
+                    class="absolute top-6 right-8 text-5xl font-black text-[#aba070]/10 group-hover:text-[#aba070]/20 transition-colors uppercase italic"
+                >
+                    02
+                </div>
+                <h3
+                    class="text-xl font-black text-white mt-8 mb-4 tracking-widest uppercase"
+                >
+                    DISEÑO PERSONAL
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Creo un plan de entrenamiento y nutrición adaptado a ti. Sin
+                    plantillas, solo estrategias para tu contexto.
                 </p>
             </div>
 
             <!-- Step 3 -->
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <h3 class="step-title">EJECUCIÓN Y SEGUIMIENTO</h3>
-                <p class="step-description">
-                    Entrenas con propósito mientras yo monitoreo tu progreso.
-                    Ajustamos el plan según tus resultados y feedback constante.
+            <div
+                class="group relative p-10 rounded-[2.5rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+            >
+                <div
+                    class="absolute top-6 right-8 text-5xl font-black text-[#aba070]/10 group-hover:text-[#aba070]/20 transition-colors uppercase italic"
+                >
+                    03
+                </div>
+                <h3
+                    class="text-xl font-black text-white mt-8 mb-4 tracking-widest uppercase"
+                >
+                    SEGUIMIENTO
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Entrenas con propósito mientras monitoreo tu progreso.
+                    Ajustamos el plan según tus resultados.
                 </p>
             </div>
 
             <!-- Step 4 -->
-            <div class="step-card">
-                <div class="step-number">04</div>
-                <h3 class="step-title">TRANSFORMACIÓN SOSTENIBLE</h3>
-                <p class="step-description">
+            <div
+                class="group relative p-10 rounded-[2.5rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+            >
+                <div
+                    class="absolute top-6 right-8 text-5xl font-black text-[#aba070]/10 group-hover:text-[#aba070]/20 transition-colors uppercase italic"
+                >
+                    04
+                </div>
+                <h3
+                    class="text-xl font-black text-white mt-8 mb-4 tracking-widest uppercase"
+                >
+                    RESULTADOS
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
                     No solo alcanzas tus metas, aprendes a mantenerlas. Te
-                    enseño a entender tu cuerpo para que los resultados sean
-                    permanentes.
+                    enseño a entender tu cuerpo para siempre.
                 </p>
             </div>
         </div>
     </div>
+
+    <!-- Decorative blur -->
+    <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#aba070]/5 blur-[150px] rounded-full pointer-events-none"
+    >
+    </div>
 </section>
 
-<style>
-    .methodology-steps {
-        position: relative;
-        width: 100%;
-        background: #000;
-        padding: 80px 20px;
-    }
-
-    .steps-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #d3c588;
-        text-align: center;
-        margin-bottom: 60px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .steps-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-    }
-
-    .step-card {
-        background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
-        padding: 40px 30px;
-        border-radius: 8px;
-        border: 1px solid rgba(211, 197, 136, 0.15);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .step-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, #d3c588 0%, transparent 100%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .step-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(211, 197, 136, 0.4);
-        box-shadow: 0 10px 30px rgba(211, 197, 136, 0.1);
-    }
-
-    .step-card:hover::before {
-        opacity: 1;
-    }
-
-    .step-number {
-        font-size: 3rem;
-        font-weight: 900;
-        color: rgba(211, 197, 136, 0.2);
-        margin-bottom: 20px;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-        line-height: 1;
-    }
-
-    .step-title {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    .step-description {
-        font-size: 1rem;
-        font-weight: 300;
-        color: #e0e0e0;
-        line-height: 1.7;
-        margin: 0;
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
-    }
-
-    @media (max-width: 768px) {
-        .methodology-steps {
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        .steps-grid {
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        .step-card {
-            padding: 30px 25px;
-        }
-
-        .step-number {
-            font-size: 2.5rem;
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-        }
-
-        .step-description {
-            font-size: 0.95rem;
-        }
-    }
-</style>
+<style></style>
