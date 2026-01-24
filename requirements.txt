@@ -1,6 +1,0 @@
-# Note: This is a Node.js project.
-# These dependencies are managed via package.json.
-# This file is provided for reference purposes.
-
-@studio-freight/lenis^1.0.42
-astro^5.15.4
