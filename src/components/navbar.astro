@@ -1,5 +1,7 @@
 ---
 // Navbar.astro
+import { Image } from 'astro:assets';
+import logito from '../assets/images/logito.webp';
 ---
 
 <nav
@@ -13,12 +15,13 @@
       href="/"
       class="transition-transform duration-500 hover:scale-110 flex items-center gap-3"
     >
-      <img
-        src="../../images/logito.webp"
+      <Image
+        src={logito}
         alt="Logo Julian Rpo Trainer"
-        class="h-10 md:h-12 w-auto brightness-110"
+        class="h-8 md:h-10 w-auto brightness-110"
         loading="eager"
-        fetchpriority="high"
+        width={128}
+        height={80}
       />
       <span
         class="text-white font-black tracking-[0.3em] text-xs hidden sm:block uppercase italic"
