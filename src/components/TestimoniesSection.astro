@@ -126,7 +126,7 @@ const videoTestimonials = [
   <div class="max-w-[1600px] mx-auto mb-24 relative z-10">
     <div class="text-center mb-12">
       <h3
-        class="text-5xl md:text-7xl font-black text-white tracking-widest uppercase opacity-20 select-none"
+        class="text-3xl md:text-5xl lg:text-7xl font-black text-white/40 tracking-tight uppercase select-none"
       >
         TRANSFORMACIONES
       </h3>
@@ -169,16 +169,18 @@ const videoTestimonials = [
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {
           videoTestimonials.map((item) => (
-            <div class="group relative aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-3xl border border-white/5 hover:border-[#aba070]/50 transition-all duration-500 hover:-translate-y-4">
-              <iframe
-                src={`https://www.youtube.com/embed/${item.id}`}
-                title={`Video testimonio del cliente ${item.id}`}
+            <div class="yt-facade group relative aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-3xl border border-white/5 hover:border-[#aba070]/50 transition-all duration-500 hover:-translate-y-4 cursor-pointer" data-yt-id={item.id}>
+              <img
+                src={`https://img.youtube.com/vi/${item.id}/hqdefault.jpg`}
+                alt={`Video testimonio del cliente ${item.id}`}
                 class="w-full h-full object-cover"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
                 loading="lazy"
               />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
               <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none">
                 <p class="text-white text-[10px] leading-relaxed italic font-light drop-shadow-md">
                   "{item.comment}"
@@ -197,5 +199,21 @@ const videoTestimonials = [
   >
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('.yt-facade').forEach((el) => {
+    el.addEventListener('click', () => {
+      const id = el.getAttribute('data-yt-id');
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+      iframe.className = 'w-full h-full object-cover';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      el.innerHTML = '';
+      el.appendChild(iframe);
+    }, { once: true });
+  });
+</script>
 
 <style></style>
