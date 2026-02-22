@@ -9,6 +9,13 @@ Este proyecto está construido con:
 - **[Astro](https://astro.build/)**: Framework web para sitios rápidos enfocados en contenido.
 - **[@studio-freight/lenis](https://github.com/darkroomengineering/lenis)**: Librería para smooth scrolling.
 
+
+## 📺 Preview
+
+**🌐 Visita el sitio:**  [https://julian-rpo-trainer.vercel.app](https://julian-rpo-trainer.vercel.app)
+
+
+
 ## 🛠️ Instalación y Uso
 
 Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
@@ -46,6 +53,3 @@ Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
 - `src/pages`: Páginas del sitio (actualmente `index.astro`).
 - `public`: Assets estáticos.
 
-## 📝 Licencia
-
-Este proyecto es para uso privado de JulianRpoTrainer.
