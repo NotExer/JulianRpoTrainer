@@ -2,7 +2,7 @@
 
 Este es el repositorio oficial para el sitio web de **JulianRpoTrainer**, enfocado en entrenamiento personal y motivación.
 
-## 🚀 Tecnologías
+## Tecnologías
 
 Este proyecto está construido con:
 
@@ -10,13 +10,13 @@ Este proyecto está construido con:
 - **[@studio-freight/lenis](https://github.com/darkroomengineering/lenis)**: Librería para smooth scrolling.
 
 
-## 📺 Preview
+##  Preview
 
-**🌐 Visita el sitio:**  [https://julian-rpo-trainer.vercel.app](https://julian-rpo-trainer.vercel.app)
+**Visita el sitio:**  [https://julian-rpo-trainer.vercel.app](https://julian-rpo-trainer.vercel.app)
 
 
 
-## 🛠️ Instalación y Uso
+## Instalación y Uso
 
 Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
 
@@ -41,13 +41,13 @@ Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
 
     El sitio estará disponible en `http://localhost:4321`.
 
-## 📜 Scripts Disponibles
+## Scripts Disponibles
 
 - `npm run dev`: Inicia el servidor de desarrollo.
 - `npm run build`: Construye el sitio para producción.
 - `npm run preview`: Vista previa de la build de producción.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 - `src/components`: Componentes reutilizables (Navbar, Banner, Footer, etc.).
 - `src/pages`: Páginas del sitio (actualmente `index.astro`).
